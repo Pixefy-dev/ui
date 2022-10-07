@@ -1,0 +1,8 @@
+*.log
+.DS_Store
+node_modules
+dist
+tester
+tester-react
+package-lock.json
+.idea
