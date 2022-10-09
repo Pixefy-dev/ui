@@ -1,0 +1,16 @@
+.line {
+  width: 258px;
+  height: 74px;
+
+  background: gold;
+
+  &:hover {
+    background: rebeccapurple;
+  }
+
+  .children {
+    margin: 20px;
+
+    background: red;
+  }
+}

@@ -1,2 +1,1 @@
-export * from './components/index';
-export * from './components/kekos/test';
+export { Line } from './components/Line';
