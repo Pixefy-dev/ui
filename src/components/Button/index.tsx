@@ -1,5 +1,7 @@
 import React, { FC, HTMLAttributes, ReactChild } from 'react';
 
+import { LineWrapper } from "@/components/LineWrapper";
+
 import './index.scss';
 
 export interface IProps extends HTMLAttributes<HTMLDivElement> {
@@ -14,9 +16,11 @@ export class Button extends React.Component<FC> {
 
   render() {
     return (
-      <div className="button">
-        ddw
-      </div>
+      <LineWrapper>
+        <button className="button">
+          kekos
+        </button>
+      </LineWrapper>
     );
   }
 

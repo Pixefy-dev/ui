@@ -1,1 +1,1 @@
-export { Line } from './components/Line';
+export { LineWrapper } from './components/LineWrapper';

@@ -1,0 +1,131 @@
+$offset: 3px;
+
+@mixin generateLines($name, $top, $bottom, $sides, $front) {
+  @at-root {
+    .lineWrapper-accentColor-#{$name} {
+      .lineWrapper__lines {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &__top,
+        &__bottom,
+        &__sides,
+        &__front {
+          transition: .3s ease;
+        }
+
+        &__top {
+          width: calc(100% - $offset * 2);
+          height: calc(100% - $offset);
+
+          position: absolute;
+          top: 0;
+          left: $offset;
+
+          background: $top;
+        }
+
+        &__bottom {
+          width: calc(100% - $offset * 2);
+          height: calc(100% - $offset);
+
+          position: absolute;
+          left: $offset;
+          bottom: 0;
+
+          background: $bottom;
+        }
+
+        &__sides {
+          width: 100%;
+          height: calc(100% - $offset * 2);
+
+          position: absolute;
+          top: $offset;
+          left: 0;
+
+          background: $sides;
+        }
+
+        &__front {
+          width: calc(100% - $offset * 2);
+          height: calc(100% - $offset * 2);
+
+          position: absolute;
+          top: $offset;
+          left: $offset;
+
+          background: $front;
+        }
+      }
+    }
+
+    .lineWrapper-hoverColor-#{$name}:hover {
+      .lineWrapper__lines {
+        &__top {
+          background: $top;
+        }
+
+        &__bottom {
+          background: $bottom;
+        }
+
+        &__sides {
+          background: $sides;
+        }
+
+        &__front {
+          background: $front;
+        }
+      }
+    }
+
+    .lineWrapper-activeColor-#{$name}:active {
+      .lineWrapper__lines {
+        &__top {
+          background: $bottom;
+        }
+
+        &__bottom {
+          background: $top;
+        }
+
+        &__sides {
+          background: $sides;
+        }
+
+        &__front {
+          background: $front;
+        }
+      }
+    }
+  }
+}
+
+.lineWrapper {
+  width: 163px;
+  height: 52px;
+
+  position: relative;
+
+  // generateLines($name, $top, $bottom, $sides, $front)
+  @include generateLines('green', #2BC95A, #005228, #1B6942, #008E44);
+  @include generateLines('grey', #505050, #2E2E2E, #3F3F3F, #3A3A3A);
+  @include generateLines('yellow', #F2E03B, #B15E19, #FF9125, #F2B129);
+  @include generateLines('blue', #60D3F8, #0047B1, #205ED9, #5190FB);
+  @include generateLines('purple', #B12BC9, #420152, #571B69, #8E008E);
+  @include generateLines('red', #E54646, #AB1A1A, #C11C1C, #E42727);
+
+  &__children {
+    width: calc(100% - $offset * 2);
+    height: calc(100% - $offset * 2);
+
+    position: absolute;
+
+    margin: $offset;
+  }
+}
