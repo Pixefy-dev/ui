@@ -26,7 +26,6 @@ module.exports = {
         SwitchCase: 1
       }
     ],
-    "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
     "@typescript-eslint/semi": ["error", "always"],
     "@typescript-eslint/no-unused-vars": "warn",
