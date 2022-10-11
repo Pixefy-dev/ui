@@ -1,20 +1,38 @@
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { Button, IProps } from './index';
+import * as React from "react";
+import { Meta, Story } from "@storybook/react";
+
+import { LineColor } from "@/components/LineWrapper";
+
+import { Button, IProps } from "./index";
+
+const colorOptions = [undefined, ...Object.values(LineColor)];
 
 const meta: Meta = {
-  title: 'Pixefy UI/Buttons/Thing',
+  title: "Pixefy UI/Buttons/Thing",
   component: Button,
   argTypes: {
+    accentColor: {
+      options: colorOptions,
+      defaultValue: "gray",
+      table: {
+        defaultValue: { summary: "gray" }
+      }
+    },
+    hoverColor: {
+      options: colorOptions
+    },
+    activeColor: {
+      options: colorOptions
+    },
     children: {
       control: {
-        type: 'text',
-      },
-    },
+        type: "text"
+      }
+    }
   },
   parameters: {
-    controls: { expanded: true },
-  },
+    controls: { expanded: true }
+  }
 };
 
 export default meta;

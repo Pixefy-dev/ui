@@ -1,12 +1,12 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement } from "react";
 
 import classNames from "@/functions/classNames";
 
-import './index.scss';
+import "./index.scss";
 
 export enum LineColor {
   GREEN = "green",
-  GREY = "grey",
+  GRAY = "gray",
   YELLOW = "yellow",
   BLUE = "blue",
   PURPLE = "purple",
@@ -14,15 +14,15 @@ export enum LineColor {
 }
 
 export interface IProps {
-  accentColor?: LineColor,
-  hoverColor?: LineColor,
-  activeColor?: LineColor,
+  accentColor?: LineColor;
+  hoverColor?: LineColor;
+  activeColor?: LineColor;
   /** custom content, defaults to 'the snozzberries taste like snozzberries' */
-  children: ReactElement
+  children: ReactElement;
 }
 
 interface IState {
-  hover: boolean
+  hover: boolean;
 }
 
 /**
@@ -31,7 +31,7 @@ interface IState {
 export class LineWrapper extends React.Component<IProps, IState> {
   render() {
     const {
-      accentColor = LineColor.GREY,
+      accentColor = LineColor.GRAY,
       activeColor,
       hoverColor,
       children
@@ -40,7 +40,7 @@ export class LineWrapper extends React.Component<IProps, IState> {
     return (
       <div
         className={classNames(
-          'lineWrapper',
+          "lineWrapper",
           `lineWrapper-accentColor-${accentColor}`,
           hoverColor && `lineWrapper-hoverColor-${hoverColor}`,
           activeColor && `lineWrapper-activeColor-${activeColor}`
@@ -54,12 +54,11 @@ export class LineWrapper extends React.Component<IProps, IState> {
         </div>
         {React.cloneElement(children, {
           className: classNames(
-            'lineWrapper__children',
+            "lineWrapper__children",
             children.props.className
           )
         })}
       </div>
     );
   }
-
 }

@@ -1,18 +1,20 @@
-import * as React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { LineWrapper, IProps, LineColor } from './index';
+import * as React from "react";
+
+import { Meta, Story } from "@storybook/react";
+
+import { LineWrapper, IProps, LineColor } from "./index";
 
 const colorOptions = [undefined, ...Object.values(LineColor)];
 
 const meta: Meta = {
-  title: 'Pixefy UI/LineWrapper',
+  title: "Pixefy UI/LineWrapper",
   component: LineWrapper,
   argTypes: {
     accentColor: {
       options: colorOptions,
-      defaultValue: 'grey',
+      defaultValue: "gray",
       table: {
-        defaultValue: { summary: 'grey' }
+        defaultValue: { summary: "gray" }
       }
     },
     hoverColor: {
@@ -23,22 +25,20 @@ const meta: Meta = {
     },
     children: {
       control: {
-        type: 'text',
-      },
-    },
+        type: "text"
+      }
+    }
   },
   parameters: {
-    controls: { expanded: true },
-  },
+    controls: { expanded: true }
+  }
 };
 
 export default meta;
 
 const Template: Story<IProps> = args => (
   <LineWrapper {...args}>
-    <div>
-      {args.children}
-    </div>
+    <div>{args.children}</div>
   </LineWrapper>
 );
 

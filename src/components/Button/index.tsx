@@ -1,27 +1,31 @@
-import React, { FC, HTMLAttributes, ReactChild } from 'react';
+import React, { ReactElement } from "react";
 
-import { LineWrapper } from "@/components/LineWrapper";
+import { LineWrapper, LineColor } from "@/components/LineWrapper";
 
-import './index.scss';
+import "./index.scss";
 
-export interface IProps extends HTMLAttributes<HTMLDivElement> {
-  /** custom content, defaults to 'the snozzberries taste like snozzberries' */
-  children?: ReactChild;
+export interface IProps {
+  accentColor?: LineColor;
+  hoverColor?: LineColor;
+  activeColor?: LineColor;
+  children?: ReactElement;
 }
 
 /**
  * A custom Thing component.
  */
-export class Button extends React.Component<FC> {
-
+export class Button extends React.Component<IProps> {
   render() {
+    const { accentColor, hoverColor, activeColor } = this.props;
+
     return (
-      <LineWrapper>
-        <button className="button">
-          kekos
-        </button>
+      <LineWrapper
+        accentColor={accentColor}
+        hoverColor={hoverColor}
+        activeColor={activeColor}
+      >
+        <button className="button">kekos</button>
       </LineWrapper>
     );
   }
-
 }

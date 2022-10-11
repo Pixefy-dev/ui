@@ -114,7 +114,7 @@ $offset: 3px;
 
   // generateLines($name, $top, $bottom, $sides, $front)
   @include generateLines('green', #2BC95A, #005228, #1B6942, #008E44);
-  @include generateLines('grey', #505050, #2E2E2E, #3F3F3F, #3A3A3A);
+  @include generateLines('gray', #505050, #2E2E2E, #3F3F3F, #3A3A3A);
   @include generateLines('yellow', #F2E03B, #B15E19, #FF9125, #F2B129);
   @include generateLines('blue', #60D3F8, #0047B1, #205ED9, #5190FB);
   @include generateLines('purple', #B12BC9, #420152, #571B69, #8E008E);
