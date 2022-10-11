@@ -1,1 +1,3 @@
-export { LineWrapper } from "./components/LineWrapper";
+export * from "./components/LineWrapper";
+
+export { Button } from "./components/Button";

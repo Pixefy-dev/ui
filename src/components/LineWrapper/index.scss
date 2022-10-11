@@ -1,70 +1,33 @@
+
 $offset: 3px;
 
 @mixin generateLines($name, $top, $bottom, $sides, $front) {
-  @at-root {
-    .lineWrapper-accentColor-#{$name} {
-      .lineWrapper__lines {
-        width: 100%;
-        height: 100%;
+  .lineWrapper-accentColor-#{$name} {
+    visibility: visible;
 
-        position: absolute;
-        top: 0;
-        left: 0;
+    .lineWrapper__lines {
+      &__top {
+        background: $top;
+      }
 
-        &__top,
-        &__bottom,
-        &__sides,
-        &__front {
-          transition: .3s ease;
-        }
+      &__bottom {
+        background: $bottom;
+      }
 
-        &__top {
-          width: calc(100% - $offset * 2);
-          height: calc(100% - $offset);
+      &__sides {
+        background: $sides;
+      }
 
-          position: absolute;
-          top: 0;
-          left: $offset;
-
-          background: $top;
-        }
-
-        &__bottom {
-          width: calc(100% - $offset * 2);
-          height: calc(100% - $offset);
-
-          position: absolute;
-          left: $offset;
-          bottom: 0;
-
-          background: $bottom;
-        }
-
-        &__sides {
-          width: 100%;
-          height: calc(100% - $offset * 2);
-
-          position: absolute;
-          top: $offset;
-          left: 0;
-
-          background: $sides;
-        }
-
-        &__front {
-          width: calc(100% - $offset * 2);
-          height: calc(100% - $offset * 2);
-
-          position: absolute;
-          top: $offset;
-          left: $offset;
-
-          background: $front;
-        }
+      &__front {
+        background: $front;
       }
     }
+  }
 
-    .lineWrapper-hoverColor-#{$name}:hover {
+  .lineWrapper-hoverColor-#{$name} {
+    visibility: visible;
+
+    &:hover {
       .lineWrapper__lines {
         &__top {
           background: $top;
@@ -83,23 +46,38 @@ $offset: 3px;
         }
       }
     }
+  }
 
-    .lineWrapper-activeColor-#{$name}:active {
+  .lineWrapper-activeColor-#{$name} {
+    visibility: visible;
+
+    // !important temporary fixing priority bug
+
+    &:hover {
+      &__top,
+      &__bottom,
+      &__sides,
+      &__front {
+        background: unset !important;
+      }
+    }
+
+    &:active {
       .lineWrapper__lines {
         &__top {
-          background: $bottom;
+          background: $bottom !important
         }
 
         &__bottom {
-          background: $top;
+          background: $top !important;
         }
 
         &__sides {
-          background: $sides;
+          background: $sides !important;
         }
 
         &__front {
-          background: $front;
+          background: $front !important;
         }
       }
     }
@@ -112,13 +90,57 @@ $offset: 3px;
 
   position: relative;
 
-  // generateLines($name, $top, $bottom, $sides, $front)
-  @include generateLines('green', #2BC95A, #005228, #1B6942, #008E44);
-  @include generateLines('gray', #505050, #2E2E2E, #3F3F3F, #3A3A3A);
-  @include generateLines('yellow', #F2E03B, #B15E19, #FF9125, #F2B129);
-  @include generateLines('blue', #60D3F8, #0047B1, #205ED9, #5190FB);
-  @include generateLines('purple', #B12BC9, #420152, #571B69, #8E008E);
-  @include generateLines('red', #E54646, #AB1A1A, #C11C1C, #E42727);
+  &__lines {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &__top,
+    &__bottom,
+    &__sides,
+    &__front {
+      //transition: .3s ease;
+    }
+
+    &__top {
+      width: calc(100% - $offset * 2);
+      height: calc(100% - $offset);
+
+      position: absolute;
+      top: 0;
+      left: $offset;
+    }
+
+    &__bottom {
+      width: calc(100% - $offset * 2);
+      height: calc(100% - $offset);
+
+      position: absolute;
+      left: $offset;
+      bottom: 0;
+    }
+
+    &__sides {
+      width: 100%;
+      height: calc(100% - $offset * 2);
+
+      position: absolute;
+      top: $offset;
+      left: 0;
+    }
+
+    &__front {
+      width: calc(100% - $offset * 2);
+      height: calc(100% - $offset * 2);
+
+      position: absolute;
+      top: $offset;
+      left: $offset;
+    }
+  }
 
   &__children {
     width: calc(100% - $offset * 2);
@@ -129,3 +151,11 @@ $offset: 3px;
     margin: $offset;
   }
 }
+
+// generateLines($name, $top, $bottom, $sides, $front)
+@include generateLines('green', #2BC95A, #005228, #1B6942, #008E44);
+@include generateLines('gray', #505050, #2E2E2E, #3F3F3F, #3A3A3A);
+@include generateLines('yellow', #F2E03B, #B15E19, #FF9125, #F2B129);
+@include generateLines('blue', #60D3F8, #0047B1, #205ED9, #5190FB);
+@include generateLines('purple', #B12BC9, #420152, #571B69, #8E008E);
+@include generateLines('red', #E54646, #AB1A1A, #C11C1C, #E42727);
