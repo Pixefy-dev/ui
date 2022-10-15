@@ -85,8 +85,8 @@ $offset: 3px;
 }
 
 .lineWrapper {
-  width: 163px;
-  height: 52px;
+  width: 100%;
+  height: 100%;
 
   position: relative;
 
@@ -109,7 +109,7 @@ $offset: 3px;
   }
 
   &-size {
-    &-exs {
+    &-xxs {
       width: 56px;
       height: 24px;
     }
@@ -132,6 +132,10 @@ $offset: 3px;
     &-l {
       width: 258px;
       height: 74px;
+    }
+
+    &-stretched {
+      width: 100%;
     }
   }
 

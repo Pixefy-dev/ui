@@ -19,8 +19,7 @@
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -81,7 +80,6 @@
     "tslib": "^2.4.0",
     "typescript": "^4.8.4",
     "node-sass": "^7.0.3",
-    "sass": "^1.55.0",
-    "gh-pages": "^4.0.0"
+    "sass": "^1.55.0"
   }
 }

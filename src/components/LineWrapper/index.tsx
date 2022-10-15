@@ -2,23 +2,17 @@ import React from "react";
 
 import classNames from "@/functions/classNames";
 
-import { LineColor, LineWrapperDefaultProps } from "@/components/LineWrapper/types";
+import {
+  LineColor,
+  LineSize,
+  LineWrapperButtonProps,
+  LineWrapperDivProps,
+  LineWrapperLinkProps
+} from "@/components/LineWrapper/types";
 
 import "./index.scss";
 
-interface DivProps extends LineWrapperDefaultProps, React.ComponentProps<"div"> {
-  component: "div"
-}
-
-interface ButtonProps extends LineWrapperDefaultProps, React.ComponentProps<"button"> {
-  component: "button"
-}
-
-interface LinkProps extends LineWrapperDefaultProps, React.ComponentProps<"a"> {
-  component: "a"
-}
-
-export type IProps = DivProps | ButtonProps | LinkProps;
+export type IProps = LineWrapperDivProps | LineWrapperButtonProps | LineWrapperLinkProps;
 
 interface IState {
   hover: boolean;
@@ -32,10 +26,12 @@ export class LineWrapper extends React.Component<IProps, IState> {
     const {
       className,
       component: Component = "div",
-      // size = LineSize.M,
+      size = LineSize.M,
       accentColor = LineColor.GRAY,
       hoverColor,
       activeColor,
+      disabled = false,
+      stretched = false,
       children
     } = this.props;
 
@@ -47,8 +43,8 @@ export class LineWrapper extends React.Component<IProps, IState> {
         className={classNames(
           "lineWrapper",
           `lineWrapper-accentColor-${accentColor}`,
-          hoverColor && `lineWrapper-hoverColor-${hoverColor}`,
-          activeColor && `lineWrapper-activeColor-${activeColor}`
+          !disabled && (hoverColor && `lineWrapper-hoverColor-${hoverColor}`),
+          !disabled && (activeColor && `lineWrapper-activeColor-${activeColor}`)
         )}
       >
         <span className="lineWrapper__lines">
@@ -80,7 +76,8 @@ export class LineWrapper extends React.Component<IProps, IState> {
         className={classNames(
           "lineWrapper-type",
           `lineWrapper-type-${Component}`,
-          // `lineWrapper-size-${size}`,
+          `lineWrapper-size-${size}`,
+          stretched && "lineWrapper-size-stretched",
           className
         )}
       >

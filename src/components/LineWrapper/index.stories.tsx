@@ -39,7 +39,7 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<IProps> = args => (
-  <LineWrapper {...args as any}>
+  <LineWrapper {...args}>
     <div>{args.children}</div>
   </LineWrapper>
 );
