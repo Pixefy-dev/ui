@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 
-import { LineColor } from "@/components/LineWrapper";
+import { LineColor, LineWrapperButtonProps } from "@/components/LineWrapper/types";
 
-import { Button, IProps } from "./index";
+import { Button } from "./index";
 
 const colorOptions = [undefined, ...Object.values(LineColor)];
 
 const meta: Meta = {
-  title: "Pixefy UI/Buttons/Thing",
+  title: "Pixefy UI/Blocks/Button",
   component: Button,
   argTypes: {
     accentColor: {
@@ -25,6 +25,7 @@ const meta: Meta = {
       options: colorOptions
     },
     children: {
+      defaultValue: "Default",
       control: {
         type: "text"
       }
@@ -37,7 +38,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<IProps> = args => <Button {...args} />;
+const Template: Story<LineWrapperButtonProps> = args => <Button {...args as any} />;
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing

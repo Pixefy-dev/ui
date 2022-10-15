@@ -1,26 +1,24 @@
-import React, { ReactElement } from "react";
+import React from "react";
 
 import classNames from "@/functions/classNames";
 
+import { LineColor, LineWrapperDefaultProps } from "@/components/LineWrapper/types";
+
 import "./index.scss";
 
-export enum LineColor {
-  GREEN = "green",
-  GRAY = "gray",
-  YELLOW = "yellow",
-  BLUE = "blue",
-  PURPLE = "purple",
-  RED = "red"
+interface DivProps extends LineWrapperDefaultProps, React.ComponentProps<"div"> {
+  component: "div"
 }
 
-export interface IProps {
-  className?: string;
-  accentColor?: LineColor;
-  hoverColor?: LineColor;
-  activeColor?: LineColor;
-  /** custom content, defaults to 'the snozzberries taste like snozzberries' */
-  children: ReactElement;
+interface ButtonProps extends LineWrapperDefaultProps, React.ComponentProps<"button"> {
+  component: "button"
 }
+
+interface LinkProps extends LineWrapperDefaultProps, React.ComponentProps<"a"> {
+  component: "a"
+}
+
+export type IProps = DivProps | ButtonProps | LinkProps;
 
 interface IState {
   hover: boolean;
@@ -30,71 +28,64 @@ interface IState {
  * A custom Thing component.
  */
 export class LineWrapper extends React.Component<IProps, IState> {
-  classNamePriority() {
-    const { activeColor, hoverColor } = this.props;
-
-    const colors = Object.values(LineColor);
-
-    let hoverPriority = 0;
-    let activePriority = 0;
-
-    console.log(colors);
-
-    if (hoverColor) {
-      hoverPriority = colors.indexOf(hoverColor);
-    }
-
-    if (activeColor) {
-      activePriority = colors.indexOf(activeColor);
-    }
-
-    if (hoverPriority >= activePriority) {
-      return (
-        `lineWrapper-activeColor-${activeColor}` +
-        " " +
-        `lineWrapper-hoverColor-${hoverColor}`
-      );
-    } else {
-      return (
-        `lineWrapper-hoverColor-${hoverColor}` +
-        " " +
-        `lineWrapper-activeColor-${activeColor}`
-      );
-    }
-
-    return "";
-  }
-
   render() {
-    const { className, accentColor = LineColor.GRAY, children } = this.props;
+    const {
+      className,
+      component: Component = "div",
+      // size = LineSize.M,
+      accentColor = LineColor.GRAY,
+      hoverColor,
+      activeColor,
+      children
+    } = this.props;
 
     /* TODO: Проблема приоритетов классов внутри css, т/к у каждого цвета есть свой accent, hover, active они перебивают
         друг друга, разделить accent, hover, active на отдельные под классы  */
 
-    return (
-      <div
+    const LineWrapper = (
+      <span
         className={classNames(
           "lineWrapper",
           `lineWrapper-accentColor-${accentColor}`,
-          // hoverColor && `lineWrapper-hoverColor-${hoverColor}`,
-          // activeColor && `lineWrapper-activeColor-${activeColor}`,
-          this.classNamePriority(),
+          hoverColor && `lineWrapper-hoverColor-${hoverColor}`,
+          activeColor && `lineWrapper-activeColor-${activeColor}`
+        )}
+      >
+        <span className="lineWrapper__lines">
+          <span className="lineWrapper__lines__top"></span>
+          <span className="lineWrapper__lines__bottom"></span>
+          <span className="lineWrapper__lines__sides"></span>
+          <span className="lineWrapper__lines__front"></span>
+        </span>
+
+        {React.isValidElement(children) ? (
+          React.cloneElement(children, {
+            ...children.props,
+            className: classNames(
+              "lineWrapper__children",
+              children.props.className
+            )
+          })
+        ) : (
+          <span className="lineWrapper__children">
+            {children}
+          </span>
+        )}
+      </span>
+    );
+
+    return (
+      <Component
+        {...this.props as object}
+        className={classNames(
+          "lineWrapper-type",
+          `lineWrapper-type-${Component}`,
+          // `lineWrapper-size-${size}`,
           className
         )}
       >
-        <div className="lineWrapper__lines">
-          <div className="lineWrapper__lines__top"></div>
-          <div className="lineWrapper__lines__bottom"></div>
-          <div className="lineWrapper__lines__sides"></div>
-          <div className="lineWrapper__lines__front"></div>
-        </div>
-        {React.cloneElement(children, {
-          className: classNames(
-            "lineWrapper__children",
-            children.props.className
-          )
-        })}
-      </div>
+        {LineWrapper}
+      </Component>
     );
   }
 }

@@ -1,8 +1,17 @@
 .button {
-  transition: .3s ease;
+  cursor: pointer;
+  
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  border: none;
-  outline: none;
+    font-family: 'Minecraft Rus', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
 
-  background: transparent;
+    color: #fff;
+  }
 }

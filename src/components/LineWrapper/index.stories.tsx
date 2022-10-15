@@ -2,7 +2,9 @@ import * as React from "react";
 
 import { Meta, Story } from "@storybook/react";
 
-import { LineWrapper, IProps, LineColor } from "./index";
+import { LineColor } from "@/components/LineWrapper/types";
+
+import { LineWrapper, IProps } from "./index";
 
 const colorOptions = [undefined, ...Object.values(LineColor)];
 
@@ -37,7 +39,7 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<IProps> = args => (
-  <LineWrapper {...args}>
+  <LineWrapper {...args as any}>
     <div>{args.children}</div>
   </LineWrapper>
 );

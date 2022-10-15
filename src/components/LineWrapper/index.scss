@@ -90,6 +90,51 @@ $offset: 3px;
 
   position: relative;
 
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  &-type {
+    display: flex;
+
+    &-button {
+      padding: 0;
+
+      outline: none;
+      border: none;
+
+      background: transparent;
+    }
+  }
+
+  &-size {
+    &-exs {
+      width: 56px;
+      height: 24px;
+    }
+
+    &-xs {
+      width: 90px;
+      height: 36px;
+    }
+
+    &-s {
+      width: 94px;
+      height: 40px;
+    }
+
+    &-m {
+      width: 163px;
+      height: 52px;
+    }
+
+    &-l {
+      width: 258px;
+      height: 74px;
+    }
+  }
+
   &__lines {
     width: 100%;
     height: 100%;
@@ -102,7 +147,7 @@ $offset: 3px;
     &__bottom,
     &__sides,
     &__front {
-      //transition: .3s ease;
+      transition: .3s ease;
     }
 
     &__top {
@@ -147,6 +192,8 @@ $offset: 3px;
     height: calc(100% - $offset * 2);
 
     position: absolute;
+    top: 0;
+    left: 0;
 
     margin: $offset;
   }
