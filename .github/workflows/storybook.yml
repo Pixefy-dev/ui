@@ -17,8 +17,7 @@ jobs:
       - name: Build StoryBook
         run: yarn build-storybook
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.6.2
-        with:
-          branch: gh-pages
-          folder: storybook-static # output folder from `npm run build-storybook`
+      - name: Deploy storybook to GitHub Pages
+        run: npm run deploy-storybook -- --ci
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
