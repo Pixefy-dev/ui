@@ -1,17 +1,23 @@
 import * as React from "react";
-
 import { Meta, Story } from "@storybook/react";
 
-import { LineColor } from "@/components/LineWrapper/types";
+import { LineColor, LineSize } from "@/components/Blocks/LineWrapper/types";
 
-import { LineWrapper, IProps } from "./index";
+import { IProps, Div } from "./index";
 
 const colorOptions = [undefined, ...Object.values(LineColor)];
 
 const meta: Meta = {
-  title: "Pixefy UI/LineWrapper",
-  component: LineWrapper,
+  title: "Pixefy UI/Blocks/LineWrapper/Div",
+  component: Div,
   argTypes: {
+    size: {
+      options: [...Object.values(LineSize)],
+      defaultValue: "m",
+      table: {
+        defaultValue: { summary: "m" }
+      }
+    },
     accentColor: {
       options: colorOptions,
       defaultValue: "gray",
@@ -25,9 +31,13 @@ const meta: Meta = {
     activeColor: {
       options: colorOptions
     },
-    children: {
+    stretched: {
+      defaultValue: false,
       control: {
-        type: "text"
+        type: "boolean"
+      },
+      table: {
+        defaultValue: { summary: false }
       }
     }
   },
@@ -38,14 +48,15 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<IProps> = args => (
-  <LineWrapper {...args}>
-    <div>{args.children}</div>
-  </LineWrapper>
-);
+const Template: Story<IProps> = args => <Div {...args} />;
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
 Default.args = {};
+Default.parameters = {
+  controls: {
+    exclude: ["component", "disabled"]
+  }
+};

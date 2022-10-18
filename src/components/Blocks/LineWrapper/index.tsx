@@ -8,7 +8,7 @@ import {
   LineWrapperButtonProps,
   LineWrapperDivProps,
   LineWrapperLinkProps
-} from "@/components/LineWrapper/types";
+} from "@/components/Blocks/LineWrapper/types";
 
 import "./index.scss";
 
@@ -42,9 +42,9 @@ export class LineWrapper extends React.Component<IProps, IState> {
       <span
         className={classNames(
           "lineWrapper",
-          `lineWrapper-accentColor-${accentColor}`,
-          !disabled && (hoverColor && `lineWrapper-hoverColor-${hoverColor}`),
-          !disabled && (activeColor && `lineWrapper-activeColor-${activeColor}`)
+          `lineWrapper--accentColor-${accentColor}`,
+          !disabled && (hoverColor && `lineWrapper--hoverColor-${hoverColor}`),
+          !disabled && (activeColor && `lineWrapper--activeColor-${activeColor}`)
         )}
       >
         <span className="lineWrapper__lines">

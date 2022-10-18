@@ -2,7 +2,7 @@
 $offset: 3px;
 
 @mixin generateLines($name, $top, $bottom, $sides, $front) {
-  .lineWrapper-accentColor-#{$name} {
+  .lineWrapper--accentColor-#{$name} {
     visibility: visible;
 
     .lineWrapper__lines {
@@ -24,7 +24,7 @@ $offset: 3px;
     }
   }
 
-  .lineWrapper-hoverColor-#{$name} {
+  .lineWrapper--hoverColor-#{$name} {
     visibility: visible;
 
     &:hover {
@@ -48,7 +48,7 @@ $offset: 3px;
     }
   }
 
-  .lineWrapper-activeColor-#{$name} {
+  .lineWrapper--activeColor-#{$name} {
     visibility: visible;
 
     // !important temporary fixing priority bug

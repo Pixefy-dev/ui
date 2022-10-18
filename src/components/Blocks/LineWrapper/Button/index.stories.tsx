@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 
-import { LineColor, LineSize } from "@/components/LineWrapper/types";
+import { LineColor, LineSize } from "@/components/Blocks/LineWrapper/types";
 
 import { Button, IProps } from "./index";
 
 const colorOptions = [undefined, ...Object.values(LineColor)];
 
 const meta: Meta = {
-  title: "Pixefy UI/Blocks/Button",
+  title: "Pixefy UI/Blocks/LineWrapper/Button",
   component: Button,
   argTypes: {
     align: {
