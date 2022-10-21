@@ -3,8 +3,6 @@ $offset: 3px;
 
 @mixin generateLines($name, $top, $bottom, $sides, $front) {
   .lineWrapper--accentColor-#{$name} {
-    visibility: visible;
-
     .lineWrapper__lines {
       &__top {
         background: $top;
@@ -25,8 +23,6 @@ $offset: 3px;
   }
 
   .lineWrapper--hoverColor-#{$name} {
-    visibility: visible;
-
     &:hover {
       .lineWrapper__lines {
         &__top {
@@ -49,8 +45,6 @@ $offset: 3px;
   }
 
   .lineWrapper--activeColor-#{$name} {
-    visibility: visible;
-
     // !important temporary fixing priority bug
 
     &:hover {
@@ -210,3 +204,4 @@ $offset: 3px;
 @include generateLines('blue', #60D3F8, #0047B1, #205ED9, #5190FB);
 @include generateLines('purple', #B12BC9, #420152, #571B69, #8E008E);
 @include generateLines('red', #E54646, #AB1A1A, #C11C1C, #E42727);
+@include generateLines('light_gray', #8B8B8B, #686767, #555555, #E42727);

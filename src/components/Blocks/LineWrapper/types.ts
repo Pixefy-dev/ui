@@ -3,6 +3,7 @@ import React from "react";
 export enum LineColor {
   GREEN = "green",
   GRAY = "gray",
+  LIGHT_GRAY = "light_gray",
   YELLOW = "yellow",
   BLUE = "blue",
   PURPLE = "purple",

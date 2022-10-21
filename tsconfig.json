@@ -1,6 +1,7 @@
 {
   "include": ["src", "types", "declaration.d.ts"],
   "compilerOptions": {
+    "target": "es5",
     "module": "esnext",
     "lib": ["dom", "esnext"],
     "importHelpers": true,

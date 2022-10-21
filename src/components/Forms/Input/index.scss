@@ -1,10 +1,10 @@
 .input {
-  margin: 0;
-  padding: 3px;
+  //margin: 0;
+  //padding: 3px;
 
   &__inner {
-    width: calc(100% - 10px * 2);
-    height: calc(100%);
+    width: calc(100% -  3px * 2 - 10px * 2);
+    height: calc(100% - 3px * 2);
 
     padding: 0 10px;
 
@@ -19,8 +19,31 @@
     border: none;
     outline: none;
 
+    background: #ffffff;
+
     &::placeholder {
       color: #9D9D9D;
     }
+  }
+
+  &--align {
+    &-left .input__inner {
+      text-align: start;
+    }
+
+    &-center .input__inner {
+      text-align: center;
+    }
+
+    &-right .input__inner {
+      text-align: right;
+    }
+  }
+
+  &--disabled {
+    cursor: default;
+    pointer-events: none;
+
+    opacity: .8;
   }
 }
