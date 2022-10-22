@@ -1,10 +1,26 @@
 .input {
-  //margin: 0;
-  //padding: 3px;
+  &__before,
+  &__after {
+    height: 100%;
+
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+  }
 
   &__inner {
-    width: calc(100% -  3px * 2 - 10px * 2);
-    height: calc(100% - 3px * 2);
+    width: calc(100% - 10px * 2);
+    height: 100%;
 
     padding: 0 10px;
 
@@ -19,7 +35,7 @@
     border: none;
     outline: none;
 
-    background: #ffffff;
+    background: transparent;
 
     &::placeholder {
       color: #9D9D9D;
@@ -38,6 +54,14 @@
     &-right .input__inner {
       text-align: right;
     }
+  }
+
+  &--hasBefore {
+    padding-left: 0;
+  }
+
+  &--hasAfter {
+    padding-right: 0;
   }
 
   &--disabled {

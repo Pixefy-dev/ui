@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactElement } from "react";
 
 import { Div } from "@/components/Blocks/LineWrapper/Div";
 
@@ -11,8 +11,8 @@ import "./index.scss";
 export interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
   status?: "default" | "success" | "error",
   align?: "left" | "center" | "right",
-  before?: ReactNode,
-  after?: ReactNode,
+  before?: ReactElement,
+  after?: ReactElement,
   disabled?: boolean
 }
 
@@ -74,6 +74,8 @@ export class Input extends React.Component<IProps, IState> {
 
   render() {
     const {
+      before,
+      after,
       align = "left",
       disabled = false,
     } = this.props;
@@ -96,12 +98,28 @@ export class Input extends React.Component<IProps, IState> {
           disabled={disabled}
           stretched
         >
-          <input
-            className="input__inner"
-            type="text"
-            placeholder="Введите Email"
-            {...this.props}
-          />
+          <div className="input__wrapper">
+            {before && (
+              <div className="input__before">
+                {before}
+              </div>
+            )}
+            <input
+              className={classNames(
+                "input__inner",
+                before && "input--hasBefore",
+                after && "input--hasAfter",
+              )}
+              type="text"
+              placeholder="Введите Email"
+              {...this.props}
+            />
+            {after && (
+              <div className="input__after">
+                {after}
+              </div>
+            )}
+          </div>
         </Div>
       </label>
     );

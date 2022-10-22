@@ -10,22 +10,20 @@ const meta: Meta = {
   component: Input,
   argTypes: {
     status: {
-      defaultValue: "default",
       table: {
         defaultValue: { summary: "default" }
       }
     },
     align: {
-      defaultValue: "left",
       table: {
         defaultValue: { summary: "left" }
       }
     },
     before: {
-      description: "Add icon on left side, tsx element or simple html tag like `<img src={Email} alt='' />`"
+      description: "Add icon on the left side, tsx element or simple html tag like `<img src={Email} alt='' />`"
     },
     after: {
-      description: "Add icon on left side, tsx element or simple html tag like `<img src={Email} alt='' />`"
+      description: "Add icon on the right side, tsx element or simple html tag like `<img src={Email} alt='' />`"
     },
     disabled: {
       defaultValue: false,
@@ -53,5 +51,18 @@ export const Default = Template.bind({});
 export const WithBefore = Template.bind({});
 
 WithBefore.args = {
-  before: <img src={Email} alt="" />
+  before: <img src={Email} alt="" onClick={() => console.log('d')} />
+};
+
+export const WithAfter = Template.bind({});
+
+WithAfter.args = {
+  after: <img src={Email} alt="" />
+};
+
+export const WithBeforeAndAfter = Template.bind({});
+
+WithBeforeAndAfter.args = {
+  before: <img src={Email} alt="" />,
+  after: <img src={Email} alt="" />
 };

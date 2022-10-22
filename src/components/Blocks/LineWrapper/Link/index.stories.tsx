@@ -1,10 +1,7 @@
-import { LineColor, LineSize } from "@/components/Blocks/LineWrapper/types";
 import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 
 import { IProps, Link } from "./index";
-
-const colorOptions = [undefined, ...Object.values(LineColor)];
 
 const meta: Meta = {
   title: "Pixefy UI/Blocks/LineWrapper/Link",
@@ -17,24 +14,16 @@ const meta: Meta = {
       }
     },
     size: {
-      options: [...Object.values(LineSize)],
       defaultValue: "m",
       table: {
         defaultValue: { summary: "m" }
       }
     },
     accentColor: {
-      options: colorOptions,
       defaultValue: "gray",
       table: {
         defaultValue: { summary: "gray" }
       }
-    },
-    hoverColor: {
-      options: colorOptions
-    },
-    activeColor: {
-      options: colorOptions
     },
     stretched: {
       defaultValue: false,

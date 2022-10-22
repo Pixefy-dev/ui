@@ -13,6 +13,7 @@ import {
 import "./index.scss";
 
 export interface DefaultProps {
+  /** Align of content inside element */
   align?: "left" | "center" | "right"
 }
 
