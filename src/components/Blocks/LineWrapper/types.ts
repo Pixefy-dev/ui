@@ -1,35 +1,15 @@
 import React from "react";
 
-export enum LineColor {
-  GREEN = "green",
-  GRAY = "gray",
-  LIGHT_GRAY = "light_gray",
-  YELLOW = "yellow",
-  BLUE = "blue",
-  PURPLE = "purple",
-  RED = "red"
-}
-
-export enum LineSize {
-  XXS = "xxs",
-  XS = "xs",
-  S = "s",
-  M = "m",
-  L = "l"
-}
+export type LineColor = "green" | "gray" | "yellow" | "blue" | "purple" | "red";
 
 export interface LineWrapperDefaultProps {
   component?: "div" | "button" | "a";
-  /** Size that control width and height, can be overwritten by `className` */
-  size?: LineSize;
   /** Main color  */
   accentColor?: LineColor;
   /** Color on hover */
   hoverColor?: LineColor;
   /** Color on click */
   activeColor?: LineColor;
-  /** Will component width resize 100% of container, height still depends on `size` */
-  stretched?: boolean;
   disabled?: boolean;
 }
 

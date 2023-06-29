@@ -1,0 +1,28 @@
+$screen-lg: 1920px;
+$screen-md: 1600px;
+$screen-sm: 1000px;
+$screen-xs: 500px;
+
+@mixin adaptive-lg {
+  @media screen and (max-width: $screen-lg) {
+    @content;
+  }
+}
+
+@mixin adaptive-md {
+  @media screen and (max-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin adaptive-sm {
+  @media screen and (max-width: $screen-sm) {
+    @content;
+  }
+}
+
+@mixin adaptive-xs {
+  @media screen and (max-width: $screen-xs) {
+    @content;
+  }
+}

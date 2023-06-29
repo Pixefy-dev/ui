@@ -1,5 +1,5 @@
 
-$offset: 3px;
+$offset: 5px;
 
 @mixin generateLines($name, $top, $bottom, $sides, $front) {
   .lineWrapper--accentColor-#{$name} {
@@ -102,37 +102,6 @@ $offset: 3px;
     }
   }
 
-  &-size {
-    &-xxs {
-      width: 56px;
-      height: 24px;
-    }
-
-    &-xs {
-      width: 90px;
-      height: 36px;
-    }
-
-    &-s {
-      width: 94px;
-      height: 40px;
-    }
-
-    &-m {
-      width: 163px;
-      height: 52px;
-    }
-
-    &-l {
-      width: 258px;
-      height: 74px;
-    }
-
-    &-stretched {
-      width: 100%;
-    }
-  }
-
   &__lines {
     width: 100%;
     height: 100%;
@@ -198,10 +167,9 @@ $offset: 3px;
 }
 
 // generateLines($name, $top, $bottom, $sides, $front)
-@include generateLines('green', #2BC95A, #005228, #1B6942, #008E44);
-@include generateLines('gray', #505050, #2E2E2E, #3F3F3F, #3A3A3A);
+@include generateLines('green', #12CC6F, #005228, #206643, #009D4B);
+@include generateLines('gray', #505050, #2E2E2E, #2E2E2E, #3A3A3A);
 @include generateLines('yellow', #F2E03B, #B15E19, #FF9125, #F2B129);
 @include generateLines('blue', #60D3F8, #0047B1, #205ED9, #5190FB);
-@include generateLines('purple', #B12BC9, #420152, #571B69, #8E008E);
+@include generateLines('purple', #B12BC9, #4F0661, #741A8F, #A900A9);
 @include generateLines('red', #E54646, #AB1A1A, #C11C1C, #E42727);
-@include generateLines('light_gray', #8B8B8B, #686767, #555555, #3A3A3A);

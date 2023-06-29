@@ -1,7 +1,44 @@
+@import "src/style/responsive";
+
 .button {
+  width: 175px;
+  height: 75px;
+
   cursor: pointer;
 
+  font-family: "Minecraft Rus", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+
   color: #ffffff;
+
+  @include adaptive-md {
+    width: 159px;
+    height: 60px;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  @include adaptive-sm {
+    width: 140px;
+    height: 45px;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  @include adaptive-xs {
+    width: 120px;
+    height: 35px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 120%;
+  }
 
   &__inner {
     display: flex;
@@ -9,48 +46,6 @@
     justify-content: center;
 
     color: #fff;
-  }
-
-  &--size {
-    &-xxs {
-      font-family: 'Minecraft Rus', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 10px;
-      line-height: 10px;
-    }
-
-    &-xs {
-      font-family: 'Minecraft Rus', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 12px;
-    }
-
-    &-s {
-      font-family: 'Minecraft Rus', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 13px;
-      line-height: 13px;
-    }
-
-    &-m {
-      font-family: 'Minecraft Rus', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 16px;
-    }
-
-    &-l {
-      font-family: 'Minecraft Rus', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 20px;
-    }
   }
 
   &--align {

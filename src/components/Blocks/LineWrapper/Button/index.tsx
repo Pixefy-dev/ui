@@ -1,11 +1,10 @@
 import React from "react";
 
-import { LineWrapper } from "@/components/Blocks/LineWrapper";
+import LineWrapper from "@/components/Blocks/LineWrapper";
 
 import classNames from "@/functions/classNames";
 
 import {
-  LineSize,
   LineWrapperButtonProps,
   LineWrapperLinkProps
 } from "@/components/Blocks/LineWrapper/types";
@@ -26,29 +25,25 @@ export type IProps = ButtonProps | LinkProps;
 /**
  * A custom Thing component.
  */
-export class Button extends React.Component<IProps> {
-  render() {
-    const {
-      size = LineSize.M,
-      align = "center",
-      disabled = false,
-      children
-    } = this.props;
+export default function Button(props: IProps) {
+  const {
+    align = "center",
+    disabled = false,
+    children
+  } = props;
 
-    return (
-      <LineWrapper
-        {...this.props}
-        className={classNames(
-          "button",
-          `button--size-${size}`,
-          `button--align-${align}`,
-          disabled && "button--disabled"
-        )}
-      >
-        <span className="button__inner">
-          {children}
-        </span>
-      </LineWrapper>
-    );
-  }
+  return (
+    <LineWrapper
+      {...props}
+      className={classNames(
+        "button",
+        `button--align-${align}`,
+        disabled && "button--disabled"
+      )}
+    >
+      <span className="button__inner">
+        {children}
+      </span>
+    </LineWrapper>
+  );
 }
