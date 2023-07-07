@@ -15,6 +15,7 @@ const meta: Meta = {
     // }
   },
   parameters: {
+    backgrounds: { default: "dark" },
     controls: { expanded: true }
   }
 };
