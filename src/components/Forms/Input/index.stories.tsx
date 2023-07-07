@@ -51,7 +51,7 @@ export const Default = Template.bind({});
 export const WithBefore = Template.bind({});
 
 WithBefore.args = {
-  before: <img src={Email} alt="" onClick={() => console.log('d')} />
+  before: <img src={Email} alt="" />
 };
 
 export const WithAfter = Template.bind({});

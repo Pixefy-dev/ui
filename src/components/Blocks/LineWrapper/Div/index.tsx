@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LineWrapper } from "@/components/Blocks/LineWrapper";
+import LineWrapper from "@/components/Blocks/LineWrapper";
 
 import { LineWrapperDivProps } from "@/components/Blocks/LineWrapper/types";
 

@@ -25,7 +25,7 @@ export type IProps = ButtonProps | LinkProps;
 /**
  * A custom Thing component.
  */
-export default function Button(props: IProps) {
+export function Button(props: IProps) {
   const {
     align = "center",
     disabled = false,

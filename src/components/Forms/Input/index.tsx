@@ -4,8 +4,6 @@ import { Div } from "@/components/Blocks/LineWrapper/Div";
 
 import classNames from "@/functions/classNames";
 
-import { LineColor, LineSize } from "@/components/Blocks/LineWrapper/types";
-
 import "./index.scss";
 
 export interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -41,31 +39,31 @@ export class Input extends React.Component<IProps, IState> {
 
     if (!disabled) {
       if (isHover && !isFocus) {
-        return LineColor.LIGHT_GRAY;
+        return "gray";
       }
 
       if (isFocus) {
-        return LineColor.BLUE;
+        return "blue";
       }
     }
 
     if (status === "error") {
-      return LineColor.RED;
+      return "red";
     }
 
     if (status === "success") {
-      return LineColor.GREEN;
+      return "green";
     }
 
-    return LineColor.GRAY;
+    return "gray";
   }
-  
+
   handleHover() {
     this.setState((state) => ({
       isHover: !state.isHover
     }));
   }
-  
+
   handleFocus() {
     this.setState((state) => ({
       isFocus: !state.isFocus
@@ -93,10 +91,8 @@ export class Input extends React.Component<IProps, IState> {
             `input--align-${align}`,
             disabled && "input--disabled"
           )}
-          size={LineSize.S}
           accentColor={this.color}
           disabled={disabled}
-          stretched
         >
           <div className="input__wrapper">
             {before && (

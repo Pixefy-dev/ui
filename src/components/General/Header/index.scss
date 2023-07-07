@@ -1,0 +1,73 @@
+@import "src/style/responsive";
+
+.header {
+  width: 100%;
+  height: 100px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  border-bottom: 2px solid var(--border-blue-250, rgba(36, 75, 139, 0.50));
+
+  backdrop-filter: blur(12.5px);
+  background: rgba(255, 255, 255, 0.01);
+
+  &__container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 139px;
+    height: 32px;
+  }
+
+  &__message {
+    margin-left: 35px;
+  }
+
+  &__menu {
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      font-family: "Minecraft Rus", sans-serif;
+      font-size: 16px;
+
+      text-decoration: none;
+
+      color: var(--color-white-100, #FFF);
+
+      .menu__item {
+        &__icon {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+
+    &Catalog {
+      position: absolute;
+      left: 50%;
+
+      display: flex;
+      align-items: center;
+      gap: 60px;
+
+      transform: translate(-50%);
+    }
+
+    &Actions {
+      margin-left: auto;
+
+      display: flex;
+      align-items: center;
+      gap: 45px;
+    }
+  }
+}
