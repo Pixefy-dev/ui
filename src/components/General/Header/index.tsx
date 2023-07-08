@@ -29,7 +29,7 @@ export function Header(_: HeaderProps) {
   }, []);
 
   return (
-    <div className="header" onClick={() => setBurgerOpened(!burgerOpened)}>
+    <div className="header">
       <div className="header__main">
         <Container className="header__container">
           <a className="header__logo" href="/">
@@ -60,6 +60,18 @@ export function Header(_: HeaderProps) {
               <img className="menu__item__icon" src={News} alt="header icon" />
               <span>Новости</span>
             </a>
+          </div>
+          <div
+            className={classNames(
+              "header__burgerIcon",
+              burgerOpened && "header__burgerIconActive"
+            )}
+            onClick={() => setBurgerOpened(!burgerOpened)}
+          >
+            <div className="header__burgerIcon__line" />
+            <div className="header__burgerIcon__line" />
+            <div className="header__burgerIcon__line" />
+            <div className="header__burgerIcon__line" />
           </div>
         </Container>
       </div>

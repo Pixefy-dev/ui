@@ -1,19 +1,24 @@
 @import "src/style/responsive";
 
 .container {
-  width: 1520px;
+  max-width: 1520px;
 
   margin: 0 auto;
+  padding: 0 20px;
 
   @include adaptive-md {
-    width: 1240px;
+    max-width: 1240px;
   }
 
   @include adaptive-sm {
-    width: 708px;
+    max-width: 708px;
+
+    padding: 0 20px;
   }
 
   @include adaptive-xs {
-    width: 328px;
+    max-width: 100%;
+
+    padding: 0 16px;
   }
 }

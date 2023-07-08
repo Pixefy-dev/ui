@@ -10,6 +10,9 @@
 
   animation: scaleMessage 1s infinite;
 
+  cursor: pointer;
+  user-select: none;
+
   color: #e6df45;
 
   @include adaptive-md {

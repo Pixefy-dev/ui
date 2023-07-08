@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import randomInteger from "@/functions/randomInteger";
 import classNames from "@/functions/classNames";
@@ -12,10 +12,22 @@ export interface IncreaseMessageProps extends DivProps {
 }
 
 export function IncreaseMessage({ messages, ...props }: IncreaseMessageProps) {
-  const randomIndex = randomInteger(0, messages.length - 1);
+  const [randomIndex, setRandomIndex] = useState<number>();
+
+  useEffect(() => generateRandomIndex(), []);
+
+  const generateRandomIndex = () => setRandomIndex(randomInteger(0, messages.length - 1));
+
+  if (randomIndex === undefined) {
+    return null;
+  }
 
   return (
-    <div {...props} className={classNames("increaseMessage", props.className)}>
+    <div
+      onClick={() => generateRandomIndex()}
+      {...props}
+      className={classNames("increaseMessage", props.className)}
+    >
       {messages[randomIndex]}
     </div>
   );
