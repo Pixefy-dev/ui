@@ -7,12 +7,6 @@ const meta: Meta = {
   title: "Pixefy UI/Blocks/LineWrapper/Div",
   component: Div,
   argTypes: {
-    size: {
-      defaultValue: "m",
-      table: {
-        defaultValue: { summary: "m" }
-      }
-    },
     accentColor: {
       defaultValue: "gray",
       table: {

@@ -2,13 +2,10 @@
 
 .header {
   width: 100%;
-  height: 100px;
 
   position: fixed;
   top: 0;
   left: 0;
-
-  border-bottom: 2px solid var(--border-blue-250, rgba(36, 75, 139, 0.50));
 
   backdrop-filter: blur(12.5px);
   background: rgba(255, 255, 255, 0.01);
@@ -21,13 +18,162 @@
     align-items: center;
   }
 
+  &__burgerMenu {
+    position: fixed;
+
+    display: none;
+
+    transition: max-height .3s ease, padding .3s ease;
+
+    overflow: hidden;
+    visibility: hidden;
+
+    @include adaptive-sm {
+      display: block;
+    }
+
+    &Loaded {
+      position: relative;
+
+      visibility: visible;
+    }
+  }
+
+  &__main {
+    height: 100px;
+
+    position: relative;
+
+    &::before {
+      width: 100%;
+      height: 2px;
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      content: "";
+
+      background: var(--border-blue-250, rgba(36, 75, 139, 0.50));
+    }
+
+    @include adaptive-md {
+      height: 85px;
+    }
+
+    @include adaptive-sm {
+      height: 70px;
+    }
+
+    @include adaptive-xs {
+      height: 50px;
+    }
+  }
+
+  &__mainMobile {
+    padding: 20px;
+
+    position: relative;
+
+    &::before {
+      width: 100%;
+      height: 2px;
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      content: "";
+
+      background: var(--border-blue-250, rgba(36, 75, 139, 0.50));
+    }
+  }
+
+  &__profile {
+    height: 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: height .3s ease;
+
+    @include adaptive-sm {
+      display: none;
+    }
+
+    &::before {
+      width: 100%;
+      height: 2px;
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      content: "";
+
+      background: var(--border-blue-250, rgba(36, 75, 139, 0.50));
+    }
+  }
+
+  &__profileMobile {
+    padding: 20px;
+
+    position: relative;
+
+    &::before {
+      width: 100%;
+      height: 2px;
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      content: "";
+
+      background: var(--border-blue-250, rgba(36, 75, 139, 0.50));
+    }
+  }
+
   &__logo {
     width: 139px;
     height: 32px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include adaptive-md {
+      width: 129px;
+      height: 30px;
+    }
+
+    @include adaptive-sm {
+      width: 109px;
+      height: 25px;
+    }
+
+    @include adaptive-xs {
+      width: 79px;
+      height: 18px;
+    }
   }
 
   &__message {
     margin-left: 35px;
+
+    @include adaptive-md {
+      margin-left: 30px;
+    }
+
+    @include adaptive-sm {
+      margin-left: 20px;
+    }
+
+    @include adaptive-xs {
+      margin-left: 12px;
+    }
   }
 
   &__menu {
@@ -43,10 +189,21 @@
 
       color: var(--color-white-100, #FFF);
 
+      @include adaptive-md {
+        font-size: 14px;
+
+        gap: 12px;
+      }
+
       .menu__item {
         &__icon {
           width: 32px;
           height: 32px;
+
+          @include adaptive-md {
+            width: 28px;
+            height: 28px;
+          }
         }
       }
     }
@@ -60,6 +217,28 @@
       gap: 60px;
 
       transform: translate(-50%);
+
+      @include adaptive-sm {
+        display: none;
+      }
+
+      &Mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+    &Profile {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+
+      &Mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
     }
 
     &Actions {
@@ -68,6 +247,20 @@
       display: flex;
       align-items: center;
       gap: 45px;
+
+      @include adaptive-sm {
+        display: none;
+      }
+    }
+  }
+
+  &:hover {
+    .header__profile {
+      height: 80px;
+
+      @include adaptive-md {
+        height: 60px;
+      }
     }
   }
 }

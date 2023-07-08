@@ -4,4 +4,16 @@
   width: 1520px;
 
   margin: 0 auto;
+
+  @include adaptive-md {
+    width: 1240px;
+  }
+
+  @include adaptive-sm {
+    width: 708px;
+  }
+
+  @include adaptive-xs {
+    width: 328px;
+  }
 }

@@ -7,7 +7,7 @@ import { DivProps } from "react-html-props";
 
 import "./index.scss";
 
-interface IncreaseMessageProps extends DivProps {
+export interface IncreaseMessageProps extends DivProps {
   messages: Array<string>
 }
 

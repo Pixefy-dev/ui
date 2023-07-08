@@ -1,5 +1,9 @@
+@import "src/style/responsive";
+
 .increaseMessage {
   white-space: nowrap;
+
+  display: inline-block;
 
   font-family: "Minecraft Rus", sans-serif;
   font-size: 14px;
@@ -7,6 +11,18 @@
   animation: scaleMessage 1s infinite;
 
   color: #e6df45;
+
+  @include adaptive-md {
+    font-size: 14px;
+  }
+
+  @include adaptive-sm {
+    font-size: 12px;
+  }
+
+  @include adaptive-xs {
+    font-size: 10px;
+  }
 }
 
 @keyframes scaleMessage {
