@@ -21,7 +21,7 @@ jobs:
           # It also emits such aliases as lts, latest, nightly and canary builds
           # Examples: 12.x, 10.15.1, >=10.15.0, lts/Hydrogen, 16-nightly, latest, node
           node-version: '16.x'
-        run: yarn build-storybook
+      - run: yarn build-storybook
 
       - name: Deploy storybook to GitHub Pages
         run: npm run deploy-storybook -- --ci
