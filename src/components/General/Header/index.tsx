@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { IncreaseMessage } from "@/components/General/Splash";
+import { Splash } from "@/components/General/Splash";
 import { Container } from "@/components/General/Container";
 
 import classNames from "@/functions/classNames";
@@ -35,7 +35,7 @@ export function Header(_: HeaderProps) {
           <a className="header__logo" href="/">
             <img src={Logo} alt="logo" />
           </a>
-          <IncreaseMessage
+          <Splash
             className="header__message"
             messages={[
               "Живу на Харкоре"

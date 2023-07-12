@@ -16,12 +16,14 @@
   }
 
   @include adaptive-sm {
-    height: auto;
+    height: 115px;
 
     padding: 20px 0 24px 0;
   }
 
   @include adaptive-xs {
+    height: 85px;
+
     padding: 16px;
   }
 

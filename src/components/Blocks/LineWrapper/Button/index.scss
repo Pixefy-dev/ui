@@ -1,8 +1,10 @@
-@import "src/style/responsive";
+@import "@/style/responsive";
 
 .button {
-  width: 175px;
+  min-width: 175px;
   height: 75px;
+
+  padding: 0 30px;
 
   cursor: pointer;
 
@@ -14,8 +16,10 @@
   color: #ffffff;
 
   @include adaptive-md {
-    width: 159px;
+    min-width: 159px;
     height: 60px;
+
+    padding: 0 28px;
 
     font-size: 18px;
     font-weight: 400;
@@ -23,8 +27,10 @@
   }
 
   @include adaptive-sm {
-    width: 140px;
+    min-width: 140px;
     height: 45px;
+
+    padding: 0 24px;
 
     font-size: 16px;
     font-weight: 400;
@@ -32,8 +38,10 @@
   }
 
   @include adaptive-xs {
-    width: 120px;
+    min-width: 120px;
     height: 35px;
+
+    padding: 0 20px;
 
     font-size: 14px;
     font-weight: 400;

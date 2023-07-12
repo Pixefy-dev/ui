@@ -13,25 +13,10 @@ const meta: Meta = {
         defaultValue: { summary: "center" }
       }
     },
-    size: {
-      defaultValue: "m",
-      table: {
-        defaultValue: { summary: "m" }
-      }
-    },
     accentColor: {
       defaultValue: "gray",
       table: {
         defaultValue: { summary: "gray" }
-      }
-    },
-    stretched: {
-      defaultValue: false,
-      control: {
-        type: "boolean"
-      },
-      table: {
-        defaultValue: { summary: false }
       }
     },
     disabled: {
