@@ -15,6 +15,12 @@ jobs:
         run: yarn install --ignore-engines
 
       - name: Build StoryBook
+      - uses: actions/setup-node@v3
+        with:
+          # Version Spec of the version to use in SemVer notation.
+          # It also emits such aliases as lts, latest, nightly and canary builds
+          # Examples: 12.x, 10.15.1, >=10.15.0, lts/Hydrogen, 16-nightly, latest, node
+          node-version: '16.x'
         run: yarn build-storybook
 
       - name: Deploy storybook to GitHub Pages
