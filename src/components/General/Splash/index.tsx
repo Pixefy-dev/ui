@@ -7,11 +7,11 @@ import { DivProps } from "react-html-props";
 
 import "./index.scss";
 
-export interface IncreaseMessageProps extends DivProps {
+export interface SplashProps extends DivProps {
   messages: Array<string>
 }
 
-export function IncreaseMessage({ messages, ...props }: IncreaseMessageProps) {
+export function Splash({ messages, ...props }: SplashProps) {
   const [randomIndex, setRandomIndex] = useState<number>();
 
   useEffect(() => generateRandomIndex(), []);

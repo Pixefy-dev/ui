@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { IncreaseMessage } from "@/components/General/IncreaseMessage";
+import { IncreaseMessage } from "@/components/General/Splash";
 import { Container } from "@/components/General/Container";
 
 import classNames from "@/functions/classNames";
