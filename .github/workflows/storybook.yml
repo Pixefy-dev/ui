@@ -16,8 +16,6 @@ jobs:
 
       - name: Build StoryBook
         run: yarn build-storybook
-        with:
-          node-version: 16.x
 
       - name: Deploy storybook to GitHub Pages
         run: npm run deploy-storybook -- --ci
