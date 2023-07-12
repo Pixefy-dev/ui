@@ -6,3 +6,4 @@ tester
 tester-react
 package-lock.json
 .idea
+storybook-static
