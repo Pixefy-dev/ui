@@ -8,7 +8,7 @@ import {
   LineWrapperLinkProps
 } from "@/components/Blocks/LineWrapper/types";
 
-import "./index.scss";
+// import "./index.scss";
 
 export type IProps = LineWrapperDivProps | LineWrapperButtonProps | LineWrapperLinkProps;
 
