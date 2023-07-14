@@ -2,7 +2,7 @@ import React from "react";
 
 import classNames from "@/functions/classNames";
 
-import { LineWrapper, LineWrapperButtonProps } from "@/components/Blocks/NewLineWrapper";
+import { LineWrapper, LineWrapperButtonProps } from "@/components/Blocks/LineWrapper";
 
 import "./index.scss";
 

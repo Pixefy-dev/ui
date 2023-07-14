@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LineWrapper, LineWrapperDivProps } from "@/components/Blocks/NewLineWrapper";
+import { LineWrapper, LineWrapperDivProps } from "@/components/Blocks/LineWrapper";
 
 export interface DivProps extends LineWrapperDivProps {}
 
