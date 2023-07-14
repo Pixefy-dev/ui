@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 
-import { Div } from "@/components/Blocks/LineWrapper/Div";
+// import { Div } from "@/components/Blocks/LineWrapper/Div";
 
 import classNames from "@/functions/classNames";
 
@@ -86,13 +86,13 @@ export class Input extends React.Component<IProps, IState> {
         onFocus={this.handleFocus}
         onBlur={this.handleFocus}
       >
-        <Div
+        <div
           className={classNames(
             `input--align-${align}`,
             disabled && "input--disabled"
           )}
-          accentColor={this.color}
-          disabled={disabled}
+          // accentColor={this.color}
+          // disabled={disabled}
         >
           <div className="input__wrapper">
             {before && (
@@ -116,7 +116,7 @@ export class Input extends React.Component<IProps, IState> {
               </div>
             )}
           </div>
-        </Div>
+        </div>
       </label>
     );
   }
