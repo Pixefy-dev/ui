@@ -69,11 +69,4 @@
       justify-content: right;
     }
   }
-
-  &--disabled {
-    cursor: default;
-    pointer-events: none;
-
-    opacity: .8;
-  }
 }

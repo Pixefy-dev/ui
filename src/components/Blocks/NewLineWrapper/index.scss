@@ -111,6 +111,13 @@ $offset: 5px;
       transition: background .3s ease;
     }
   }
+
+  &Disabled {
+    cursor: default;
+    pointer-events: none;
+
+    opacity: .8;
+  }
 }
 
 // generateLines($name, $top, $bottom, $sides, $front)

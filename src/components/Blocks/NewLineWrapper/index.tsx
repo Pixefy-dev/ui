@@ -3,6 +3,7 @@ import React from "react";
 import classNames from "@/functions/classNames";
 
 import "./index.scss";
+import { AProps, ButtonProps, DivProps } from "react-html-props";
 
 export type LineColor = "green" | "gray" | "yellow" | "blue" | "purple" | "red";
 
@@ -15,19 +16,21 @@ export interface LineWrapperDefaultProps {
   disabled?: boolean
 }
 
-export interface LineWrapperDivProps extends LineWrapperDefaultProps, React.HTMLAttributes<HTMLDivElement> {
-  component?: "div"
+export interface LineWrapperDivProps extends LineWrapperDefaultProps, DivProps {
+  component: "div"
 }
 
-export interface LineWrapperButtonProps extends LineWrapperDefaultProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
-  component?: "button"
+export interface LineWrapperButtonProps extends LineWrapperDefaultProps, ButtonProps {
+  component: "button"
 }
 
-export interface LineWrapperLinkProps extends LineWrapperDefaultProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  component?: "a"
+export interface LineWrapperLinkProps extends LineWrapperDefaultProps, AProps {
+  component: "a"
 }
 
-export function LineWrapper(props: LineWrapperDivProps | LineWrapperButtonProps | LineWrapperLinkProps) {
+export type LineWrapperProps = LineWrapperDivProps | LineWrapperButtonProps | LineWrapperLinkProps;
+
+export function LineWrapper(props: LineWrapperProps) {
   const {
     className,
     component: Component = "div",
@@ -42,6 +45,7 @@ export function LineWrapper(props: LineWrapperDivProps | LineWrapperButtonProps 
       className={classNames(
         "lineWrapper",
         `lineWrapperAccentColor_${accentColor}`,
+        disabled && "lineWrapperDisabled",
         !disabled && (hoverColor && `lineWrapperHoverColor_${hoverColor}`),
         className
       )}
