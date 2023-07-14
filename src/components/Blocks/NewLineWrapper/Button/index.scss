@@ -2,9 +2,6 @@
 
 .button {
   min-width: 175px;
-  height: 75px;
-
-  padding: 0 30px;
 
   cursor: pointer;
 
@@ -17,9 +14,6 @@
 
   @include adaptive-md {
     min-width: 159px;
-    height: 60px;
-
-    padding: 0 28px;
 
     font-size: 18px;
     font-weight: 400;
@@ -28,9 +22,6 @@
 
   @include adaptive-sm {
     min-width: 140px;
-    height: 45px;
-
-    padding: 0 24px;
 
     font-size: 16px;
     font-weight: 400;
@@ -39,9 +30,6 @@
 
   @include adaptive-xs {
     min-width: 120px;
-    height: 35px;
-
-    padding: 0 20px;
 
     font-size: 14px;
     font-weight: 400;
@@ -49,11 +37,25 @@
   }
 
   &__inner {
+    padding: 20px 30px;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
     color: #fff;
+
+    @include adaptive-md {
+      padding: 15px 28px;
+    }
+
+    @include adaptive-sm {
+      padding: 9px 24px;
+    }
+
+    @include adaptive-xs {
+      padding: 6px 20px;
+    }
   }
 
   &--align {

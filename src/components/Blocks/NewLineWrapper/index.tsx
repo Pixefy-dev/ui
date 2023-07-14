@@ -2,8 +2,9 @@ import React from "react";
 
 import classNames from "@/functions/classNames";
 
-import "./index.scss";
 import { AProps, ButtonProps, DivProps } from "react-html-props";
+
+import "./index.scss";
 
 export type LineColor = "green" | "gray" | "yellow" | "blue" | "purple" | "red";
 
@@ -35,7 +36,7 @@ export function LineWrapper(props: LineWrapperProps) {
     className,
     component: Component = "div",
     accentColor = "gray",
-    hoverColor,
+    hoverColor = accentColor,
     disabled = false,
     children
   } = props;

@@ -7,6 +7,12 @@ const meta: Meta = {
   title: "Pixefy UI/Blocks/LineWrapper/Button",
   component: Button,
   argTypes: {
+    align: {
+      defaultValue: "center",
+      table: {
+        defaultValue: { summary: "center" }
+      }
+    },
     accentColor: {
       defaultValue: "gray",
       table: {
