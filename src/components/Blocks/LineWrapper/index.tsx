@@ -36,7 +36,7 @@ export function LineWrapper(props: LineWrapperProps) {
     className,
     component: Component = "div",
     accentColor = "gray",
-    hoverColor = accentColor,
+    hoverColor,
     disabled = false,
     children
   } = props;

@@ -26,3 +26,19 @@ $screen-xs: 500px;
     @content;
   }
 }
+
+@mixin adapt($property, $lg, $md, $sm, $xs) {
+  #{$property}: $lg;
+
+  @include adaptive-md {
+    #{$property}: $md;
+  }
+
+  @include adaptive-sm {
+    #{$property}: $sm;
+  }
+
+  @include adaptive-xs {
+    #{$property}: $xs;
+  }
+}

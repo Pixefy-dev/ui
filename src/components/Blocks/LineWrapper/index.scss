@@ -1,4 +1,4 @@
-@import "src/style/responsive";
+@import "src/style/adaptive";
 
 $offset: 5px;
 
@@ -67,10 +67,10 @@ $offset: 5px;
 }
 
 .lineWrapper {
+  width: fit-content;
+
   display: flex;
   flex-direction: column;
-
-  cursor: pointer;
 
   &__content {
     flex: 1;

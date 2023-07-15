@@ -7,6 +7,18 @@ const meta: Meta = {
   title: "Pixefy UI/Blocks/LineWrapper/Link",
   component: Link,
   argTypes: {
+    href: {
+      defaultValue: "#",
+      table: {
+        defaultValue: { summary: "#" }
+      }
+    },
+    align: {
+      defaultValue: "center",
+      table: {
+        defaultValue: { summary: "center" }
+      }
+    },
     accentColor: {
       defaultValue: "gray",
       table: {

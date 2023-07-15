@@ -1,31 +1,11 @@
-@import "src/style/responsive";
+@import "src/style/adaptive";
 
 .supportItem {
   display: flex;
-  gap: 20px;
-
-  @include adaptive-md {
-    gap: 18px;
-  }
-
-  @include adaptive-sm {
-    gap: 16px;
-  }
-
-  @include adaptive-xs {
-    gap: 14px;
-  }
+  @include adapt("gap", 20px, 18px, 16px, 14px);
 
   &__line {
-    min-width: 5px;
-
-    @include adaptive-md {
-      min-width: 4px;
-    }
-
-    @include adaptive-xs {
-      min-width: 3px;
-    }
+    @include adapt("min-width", 5px, 4px, 4px, 3px);
   }
 
   &__content {
@@ -41,19 +21,7 @@
   &__info {
     display: flex;
     align-items: center;
-    gap: 20px;
-
-    @include adaptive-md {
-      gap: 18px;
-    }
-
-    @include adaptive-sm {
-      gap: 16px;
-    }
-
-    @include adaptive-xs {
-      gap: 14px;
-    }
+    @include adapt("gap", 20px, 18px, 16px, 14px);
   }
 
   &__userInfo {
@@ -63,92 +31,46 @@
   }
 
   &__avatar {
-    width: 50px;
-    height: 50px;
-
-    @include adaptive-md {
-      width: 45px;
-      height: 45px;
-    }
-
-    @include adaptive-sm {
-      width: 40px;
-      height: 40px;
-    }
-
-    @include adaptive-xs {
-      width: 35px;
-      height: 35px;
-    }
+    @include adapt("width", 50px, 45px, 40px, 35px);
+    @include adapt("height", 50px, 45px, 40px, 35px);
   }
 
   &__nickname {
     font-family: "Minecraft Rus", sans-serif;
-    font-size: 18px;
+
+    @include adapt("font-size", 18px, 16px, 14px, 12px);
+
     font-weight: 400;
     line-height: 120%;
 
     color: var(--color-blue, #5190FB);
-
-    @include adaptive-md {
-      font-size: 16px;
-    }
-
-    @include adaptive-sm {
-      font-size: 14px;
-    }
-
-    @include adaptive-xs {
-      font-size: 12px;
-    }
   }
 
   &__time {
     font-family: "Minecraft Rus", sans-serif;
-    font-size: 16px;
+
+    @include adapt("font-size", 16px, 14px, 12px, 10px);
+
     font-weight: 400;
     line-height: 120%;
 
     color: var(--color-white-60, rgba(255, 255, 255, 0.60));
-
-    @include adaptive-md {
-      font-size: 14px;
-    }
-
-    @include adaptive-sm {
-      font-size: 12px;
-    }
-
-    @include adaptive-xs {
-      font-size: 10px;
-    }
   }
 
   &__message {
     font-family: "Minecraft Rus", sans-serif;
-    font-size: 16px;
+
+    @include adapt("font-size", 16px, 14px, 12px, 10px);
+
     font-weight: 400;
     line-height: 150%;
 
     color: var(--color-white-100, #FFF);
-
-    @include adaptive-md {
-      font-size: 14px;
-    }
-
-    @include adaptive-sm {
-      font-size: 12px;
-    }
-
-    @include adaptive-xs {
-      font-size: 10px;
-    }
   }
 
   &Type {
     &_outgoing {
       .supportItem__line {
-        background: var(--color-green, #9FDA71);
         background: var(--color-green, #9FDA71);
       }
 
