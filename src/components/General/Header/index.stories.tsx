@@ -5,11 +5,7 @@ import { Header, HeaderProps } from "./index";
 
 const meta: Meta = {
   title: "Pixefy UI/General/Header",
-  component: Header,
-  parameters: {
-    backgrounds: { default: "dark" },
-    controls: { expanded: true }
-  }
+  component: Header
 };
 
 export default meta;

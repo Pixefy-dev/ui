@@ -148,21 +148,22 @@
   &Type {
     &_outgoing {
       .supportItem__line {
-        background: var(--color-blue, #5190FB);
-      }
-
-      .supportItem__nickname {
-        color: var(--color-blue, #5190FB);
-      }
-    }
-
-    &_incoming {
-      .supportItem__line {
+        background: var(--color-green, #9FDA71);
         background: var(--color-green, #9FDA71);
       }
 
       .supportItem__nickname {
         color: var(--color-green, #9FDA71);
+      }
+    }
+
+    &_incoming {
+      .supportItem__line {
+        background: var(--color-blue, #5190FB);
+      }
+
+      .supportItem__nickname {
+        color: var(--color-blue, #5190FB);
       }
     }
   }

@@ -5,11 +5,7 @@ import { Footer } from "./index";
 
 const meta: Meta = {
   title: "Pixefy UI/General/Footer",
-  component: Footer,
-  parameters: {
-    backgrounds: { default: "dark" },
-    controls: { expanded: true }
-  }
+  component: Footer
 };
 
 export default meta;

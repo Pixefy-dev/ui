@@ -13,10 +13,6 @@ const meta: Meta = {
         type: "text"
       }
     }
-  },
-  parameters: {
-    backgrounds: { default: "dark" },
-    controls: { expanded: true }
   }
 };
 

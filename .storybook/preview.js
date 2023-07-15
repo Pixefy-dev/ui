@@ -40,12 +40,8 @@ export const parameters = {
     viewports: customViewports
   },
   backgrounds: {
-    default: 'light',
+    default: 'dark',
     values: [
-      {
-        name: 'light',
-        value: '#fff',
-      },
       {
         name: 'dark',
         value: '#020B19',
