@@ -4,7 +4,7 @@ import React, { ReactElement } from "react";
 
 import classNames from "@/functions/classNames";
 
-import "./index.scss";
+// import "./index.scss";
 
 export interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
   status?: "default" | "success" | "error",
