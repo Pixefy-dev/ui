@@ -3,8 +3,10 @@ import React from "react";
 import AvatarIcon from "@/assets/icons/avatar.png";
 import RankIcon from "@/assets/icons/rank.png";
 import User from "@/assets/icons/user.png";
+import ActivityIcon from "@/assets/icons/activity.png";
 
 import "./index.scss";
+import { OnlineIndicator } from "@/components/General/OnlineIndicator";
 
 export function Profile() {
   return (
@@ -36,6 +38,23 @@ export function Profile() {
             src={User}
             alt=""
           />
+        </div>
+        <div className="profile__activity">
+          <img
+            className="profileActivity__image"
+            src={ActivityIcon}
+            alt=""
+          />
+          <div className="profileActivity__info">
+            <div className="profileActivity__title">
+              <span>Pixefy MiniGa</span>
+              <div className="profileActivity__online">
+                <OnlineIndicator type="offline" />
+                <span>100/1000</span>
+              </div>
+            </div>
+            <p className="profileActivity__description">Классическое выживание от создателей лаунчера</p>
+          </div>
         </div>
       </div>
       <div className="profile__backgroundMask" />

@@ -1,0 +1,35 @@
+.onlineIndicator {
+  width: 12px;
+  height: 12px;
+
+  position: relative;
+
+  &__block {
+    width: 9px;
+    height: 9px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 10;
+  }
+
+  &Type {
+    &__online {
+      background: rgba(#18B218, .5);
+
+      .onlineIndicator__block {
+        background: #18B218;
+      }
+    }
+
+    &__offline {
+      background: rgba(#B21818, .5);
+
+      .onlineIndicator__block {
+        background: #B21818;
+      }
+    }
+  }
+}
