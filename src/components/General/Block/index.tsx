@@ -6,13 +6,19 @@ import { DivProps } from "react-html-props";
 
 import "./index.scss";
 
-export interface BlockProps extends DivProps {}
+export interface BlockProps extends DivProps {
+  type?: "light" | "dark"
+}
 
-export function Block(props: BlockProps) {
+export function Block({ type = "dark", ...props }: BlockProps) {
   return (
     <div
       {...props}
-      className={classNames("block", props.className)}
+      className={classNames(
+        "block",
+        `blockStyle_${type}`,
+        props.className
+      )}
     />
   );
 }

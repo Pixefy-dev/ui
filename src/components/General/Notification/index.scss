@@ -1,0 +1,41 @@
+@import "src/style/adaptive";
+
+.notification {
+  width: fit-content;
+
+  padding: 20px 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @include adaptive-md {
+    padding: 18px 25px;
+  }
+
+  @include adaptive-sm {
+    padding: 16px 20px;
+  }
+
+  @include adaptive-xs {
+    padding: 16px;
+  }
+
+  &__icon {
+    @include adapt("width", 42px, 40px, 36px, 34px);
+    @include adapt("height", 42px, 40px, 36px, 34px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    font-family: "Minecraft Rus", sans-serif;
+    @include adapt("font-size", 20px, 18px, 16px, 14px);
+    font-weight: 400;
+    line-height: 150%;
+
+    color: var(--color-white-100, #FFF);
+  }
+}
