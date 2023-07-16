@@ -24,5 +24,5 @@ Default.args = {
     width: 150,
     height: 270
   },
-  skin: SkinAsset
+  skinUrl: SkinAsset
 };

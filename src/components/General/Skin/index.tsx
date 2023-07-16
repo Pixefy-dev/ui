@@ -8,7 +8,7 @@ import { useAsyncEffect } from "@/hooks/useAsyncEffect";
 interface SkinPropsDefault {
   type?: "image" | "canvas",
   viewer: SkinViewerOptions,
-  skin?: string,
+  skinUrl?: string,
   position?: {
     x?: number,
     y?: number,
@@ -43,7 +43,7 @@ export function Skin(props: SkinProps) {
       renderPaused: type === "image"
     });
 
-    await skinViewer.loadSkin(props.skin || "");
+    await skinViewer.loadSkin(props.skinUrl || "");
 
     const {
       x = 0,
