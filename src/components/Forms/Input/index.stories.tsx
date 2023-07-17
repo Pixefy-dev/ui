@@ -3,9 +3,6 @@ import { Meta, Story } from "@storybook/react";
 
 import { Input, InputProps } from "./index";
 
-import SteveIcon from "src/assets/icons/steve.png";
-import PaperIcon from "src/assets/icons/paper.svg";
-
 const meta: Meta = {
   title: "Pixefy UI/Forms/Input",
   component: Input,
@@ -68,16 +65,16 @@ Disabled.args = {
 
 export const WithBefore = Template.bind({});
 WithBefore.args = {
-  beforeIcon: SteveIcon
+  beforeIcon: "src/assets/icons/steve.png"
 };
 
 export const WithAfter = Template.bind({});
 WithAfter.args = {
-  afterIcon: PaperIcon
-};
+  afterIcon: "src/assets/icons/paper.svg"
+}
 
 export const WithBeforeAndAfter = Template.bind({});
 WithBeforeAndAfter.args = {
-  beforeIcon: SteveIcon,
-  afterIcon: PaperIcon
+  beforeIcon: "src/assets/icons/steve.png",
+  afterIcon: "src/assets/icons/paper.svg"
 };

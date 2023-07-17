@@ -1,4 +1,7 @@
-import type { Preview } from '@storybook/react'
+import type { Preview } from '@storybook/react';
+
+import "../src/style/reset.css";
+import "../src/assets/fonts/minecraft/minecraftrus.css";
 
 const customViewports = {
   desktop: {

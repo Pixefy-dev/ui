@@ -1,9 +1,6 @@
 import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 
-import AvatarIcon from "src/assets/icons/avatar.png";
-import SkinAsset from "src/assets/icons/skin.png";
-
 import { MiniProfile, MiniProfileProps } from "./index";
 
 const meta: Meta = {
@@ -21,8 +18,8 @@ export const Default = Template.bind({});
 
 Default.args = {
   profile: {
-    avatarUrl: AvatarIcon,
-    skinUrl: SkinAsset,
+    avatarUrl: "src/assets/icons/avatar.png",
+    skinUrl: "src/assets/icons/skin.png",
     nickname: "H4kt",
     status: "На сайте"
   },
@@ -36,8 +33,8 @@ export const WithActivity = Template.bind({});
 
 WithActivity.args = {
   profile: {
-    avatarUrl: AvatarIcon,
-    skinUrl: SkinAsset,
+    avatarUrl: "src/assets/icons/avatar.png",
+    skinUrl: "src/assets/icons/skin.png",
     nickname: "H4kt",
     status: "На сайте"
   },
@@ -55,8 +52,8 @@ export const WithActivityOnline = Template.bind({});
 
 WithActivityOnline.args = {
   profile: {
-    avatarUrl: AvatarIcon,
-    skinUrl: SkinAsset,
+    avatarUrl: "src/assets/icons/avatar.png",
+    skinUrl: "src/assets/icons/skin.png",
     nickname: "H4kt",
     status: "На сайте"
   },
@@ -79,8 +76,8 @@ export const WithActivityOffline = Template.bind({});
 
 WithActivityOffline.args = {
   profile: {
-    avatarUrl: AvatarIcon,
-    skinUrl: SkinAsset,
+    avatarUrl: "src/assets/icons/avatar.png",
+    skinUrl: "src/assets/icons/skin.png",
     nickname: "H4kt",
     status: "На сайте"
   },

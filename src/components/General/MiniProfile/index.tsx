@@ -5,9 +5,6 @@ import { Skin } from "src/components/General/Skin";
 
 import classNames from "src/functions/classNames";
 
-import RankIcon from "src/assets/icons/rank.png";
-import ActivityIcon from "src/assets/icons/activity.png";
-
 import { DivProps } from "react-html-props";
 
 import "./index.scss";
@@ -56,7 +53,7 @@ export function MiniProfile({ profile, rank, activity, ...props }: MiniProfilePr
         <div className="miniProfile__rank">
           <img
             className="miniProfileRank__icon"
-            src={RankIcon}
+            src="src/assets/icons/rank.png"
             alt=""
           />
           <div className="miniProfileRank__info">
@@ -77,7 +74,7 @@ export function MiniProfile({ profile, rank, activity, ...props }: MiniProfilePr
           <div className="miniProfile__activity">
             <img
               className="miniProfileActivity__image"
-              src={activity.previewUrl ? activity.previewUrl : ActivityIcon}
+              src={activity.previewUrl ? activity.previewUrl : "src/assets/icons/activity.png"}
               alt=""
             />
             <div className="miniProfileActivity__info">

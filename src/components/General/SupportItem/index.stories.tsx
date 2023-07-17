@@ -1,8 +1,6 @@
 import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 
-import AvatarIcon from "src/assets/icons/avatar.png";
-
 import { SupportItem, SupportItemProps } from "./index";
 
 const meta: Meta = {
@@ -15,13 +13,13 @@ const meta: Meta = {
       defaultValue: "outgoing"
     },
     avatarUrl: {
-      defaultValue: AvatarIcon,
+      defaultValue: "src/assets/icons/avatar.png",
       control: {
         type: "file",
         accept: ".png"
       },
       table: {
-        defaultValue: { summary: AvatarIcon }
+        defaultValue: { summary: "src/assets/icons/avatar.png" }
       }
     },
     nickname: {

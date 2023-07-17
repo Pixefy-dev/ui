@@ -3,8 +3,6 @@ import { Meta, Story } from "@storybook/react";
 
 import { Skin, SkinProps } from "./index";
 
-import SkinAsset from "src/assets/icons/skin.png";
-
 const meta: Meta = {
   title: "Pixefy UI/General/Skin",
   component: Skin
@@ -24,5 +22,5 @@ Default.args = {
     width: 150,
     height: 270
   },
-  skinUrl: SkinAsset
+  skinUrl: "src/assets/icons/skin.png"
 };
