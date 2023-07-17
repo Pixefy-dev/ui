@@ -12,7 +12,6 @@
   },
   "scripts": {
     "deploy": "npm login && np",
-    "loginNpm": "yarn logout && yarn login",
     "postdeploy": "bs",
     "start": "tsdx watch",
     "build": "tsdx build",
