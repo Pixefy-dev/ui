@@ -32,7 +32,7 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "name": "@skygopnik/pixefy-ui2",
+  "name": "@skygopnik/pixefy-ui3",
   "author": "SkyGopnik",
   "homepage": "https://github.com/Pixefy-dev/ui",
   "module": "dist/ui.esm.js",
