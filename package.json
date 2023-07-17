@@ -2,7 +2,7 @@
   "name": "@pixefy/ui",
   "author": "skygopnik",
   "private": false,
-  "version": "1.3.10",
+  "version": "1.3.11",
   "packageManager": "pnpm@8.4.0",
   "main": "./dist/ui.umd.js",
   "module": "./dist/ui.es.js",
