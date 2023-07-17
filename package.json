@@ -46,10 +46,6 @@
       "limit": "10 KB"
     }
   ],
-  "np": {
-    "yarn": false,
-    "contents": "dist"
-  },
   "dependencies": {
     "@rollup/plugin-alias": "^3.1.0",
     "react-html-props": "^2.0.3",
