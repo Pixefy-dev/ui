@@ -2,40 +2,19 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  parser: "@typescript-eslint/parser",
+  extends: ['plugin:react/recommended', 'standard-with-typescript', 'prettier', 'plugin:storybook/recommended'],
+  overrides: [],
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    },
-    ecmaVersion: "latest",
-    sourceType: "module"
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ['react'],
   rules: {
-    indent: [
-      "error",
-      2,
-      {
-        SwitchCase: 1
-      }
-    ],
-    quotes: ["error", "double"],
-    "@typescript-eslint/semi": ["error", "always"],
-    "@typescript-eslint/no-unused-vars": "warn",
-    "@typescript-eslint/no-var-requires": "off",
-    "@typescript-eslint/no-empty-interface": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/ban-ts-comment": "warn",
-    "object-curly-spacing": ["error", "always"],
-    "no-case-declarations": "off",
-    "no-trailing-spaces": ["error", { skipBlankLines: true }],
-    "@typescript-eslint/no-empty-function": "off"
-  }
-};
+    'react/jsx-key': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'no-console': 'warn',
+  },
+}

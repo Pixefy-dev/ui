@@ -1,106 +1,84 @@
-# React Template Library
+# ⚛️⚡ Vite + React + Typescript Component Library Template
 
-Support Absolute paths, TypeScript, SASS (SCSS) modules, StoryBook and Jest
+## Features
 
-Congrats! You just saved yourself hours of work. Let’s get you oriented with what’s here and how to use it.
+- ⚛️ [React 18](https://reactjs.org/)
+- 📚 [Storybook 7](https://storybook.js.org/) - Components preview
+- 🖌️ [Tailwind CSS 3](https://tailwindcss.com/)
+- ⏩ [Vite](https://vitejs.dev/) - Run and build the project blazingly fast!
+- ⚡ [Vitest](https://vitest.dev/) - Components Unit Testing
+- 📐 [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) - Formatting and Linting
+- 🌟 [Typescript](https://www.typescriptlang.org/)
+- 🐶 [Husky](https://typicode.github.io/husky) & [Lint Staged](https://www.npmjs.com/package/lint-staged) - Pre-commit Hooks
+- ⏰ [Release Please](https://github.com/googleapis/release-please) — Generate the changelog with the release-please workflow
+- 👷 [Github Actions](https://github.com/features/actions) — Releasing versions to NPM
+- Initial components setup using [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)
 
-> If you’re new to TypeScript and React, checkout [this handy cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet/)
+## Getting Started
 
-## Commands
+1. Create a new repository using this one as template
+2. Clone your repo
+3. Install dependencies with `pnpm i` (first run `corepack enable` to enable pnpm)
+4. Run `pnpm prepare` command to setup [Husky](https://typicode.github.io/husky) pre-commit hooks.
 
-Template scaffolds your new library inside `/src`.
+### Main Scripts
 
-The recommended workflow is to run in one terminal:
+Always prepending pnpm:
 
-```bash
-npm start # or yarn start
+- `dev`: Bootstrap the Storybook preview with Hot Reload.
+- `build`: Builds the static storybook project.
+- `build:lib`: Builds the component library into the **dist** folder.
+- `lint:fix`: Applies linting based on the rules defined in **.eslintrc.js**.
+- `format:prettier`: Formats files using the prettier rules defined in **.prettierrc**.
+- `test`: Runs testing using watch mode.
+- `test:cov`: Runs testing displaying a coverage report.
+
+### Publishing the Library to NPM
+
+**Using Github as the hosting service:**
+
+1. Check the `Allow GitHub Actions to create and approve pull requests` box under the Settings>Code and automation>Actions>General repository configuration. This will allow the release-please workflow to create a PR increasing the version.
+2. Create a repository secret called `NPM_TOKEN` under Settings>Security>Secrets and variables>Actions for the github action to be able to publish the library to npm.
+
+With these 2 requirements, Pull Requests raised by release-please will have enough permissions. For more details, check the [official documentation](https://github.com/google-github-actions/release-please-action).
+
+### Versioning
+
+Following [Conventional Commits](https://www.conventionalcommits.org/).
+
+**release-please** will bump a patch version if new commits are only fixes.
+
+It will bump a minor version if new commits include a _feat_.
+
+`feat!`, `fix!`, `refactor!`, etc., which represent a breaking change, will result in a major version.
+
+In order to change the version manually (i.e. force it), a new commit has to be created including `Release-As: X.X.X` as the description.
+Example: `git commit -m "chore: v1.2.0" -m "Release-As: 1.2.0"`
+
+## Using the library in a React frontend app
+
+Install the library running `pnpm i <your-library>`.
+
+To import the styles the library needs:
+
+```js
+/* _app.tsx */
+import '<your-library>/dist/style.css'
+// More imports and your App component ...
 ```
 
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
+To import library components:
 
-Then you can import your library in local project using such as Next:
-
-```javascript
-import { ComponentName } from "{path-to-your-project}"
+```js
+/* pages/index.tsx */
+import { AtButton } from '<your-library>'
+// More imports and your Page component...
 ```
 
-Then run either Storybook:
+## Author
 
-### Storybook
+[Ignacio Miranda Figueroa](https://www.linkedin.com/in/ignacio-miranda-figueroa/)
 
-Run inside another terminal:
+## License
 
-```bash
-npm run storybook # or yarn storybook
-```
-
-This loads the stories from `/**/*.stories.tsx`.
-
-
-### Jest
-
-Run inside another terminal:
-
-```bash
-npm run test # or yarn test
-```
-
-This loads the stories from `/**/*.test.tsx`.
-
-## Configuration
-
-### Jest
-
-Jest tests are set up to run with `npm test` or `yarn test`.
-
-### Bundle analysis
-
-Calculates the real cost of your library using [size-limit](https://github.com/ai/size-limit) with `npm run size` or `yarn size` and visulize it with `npm run analyze` or `tarn analyze`.
-
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```txt
-/src
-  index.ts              # This is main export, project won't work without it
-  /components           # Your new react library
-    index.tsx           # Your component
-    index.stories.tsx   # Instructions for StoryBook
-    index.test.tsx      # Tests for Jest
-    index.module.scss   # Styles
-    /kekos              # Another example of component
-```
-
-### Rollup
-
-Template uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings.
-
-### TypeScript
-
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
-
-## Continuous Integration
-
-### GitHub Actions
-
-Two actions are added by default:
-
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [size-limit](https://github.com/ai/size-limit)
-
-## Module Formats
-
-CJS, ESModules, and UMD module formats are supported.
-
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
-
-## Including Styles
-
-There are many ways to ship styles, including with CSS-in-JS. Template has no opinion on this, configure how you like.
-
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
-
-## Publishing to NPM
-
-We recommend using [np](https://github.com/sindresorhus/np).
+[MIT](LICENSE)

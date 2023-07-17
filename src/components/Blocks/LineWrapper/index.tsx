@@ -1,8 +1,7 @@
 import React from "react";
+import { AProps, ButtonProps, DivProps } from "react-html-props";
 
 import classNames from "src/functions/classNames";
-
-import { AProps, ButtonProps, DivProps } from "react-html-props";
 
 import "./index.scss";
 
