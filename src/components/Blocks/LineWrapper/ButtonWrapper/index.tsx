@@ -15,6 +15,7 @@ interface DefaultButtonWrapperProps {
 }
 
 export interface ButtonWrapperButtonProps extends DefaultButtonWrapperProps, LineWrapperButtonProps {}
+
 export interface ButtonWrapperLinkProps extends DefaultButtonWrapperProps, LineWrapperLinkProps {}
 
 export function ButtonWrapper(props: ButtonWrapperButtonProps | ButtonWrapperLinkProps) {

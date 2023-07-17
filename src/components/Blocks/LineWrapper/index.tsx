@@ -17,15 +17,15 @@ export interface LineWrapperDefaultProps {
 }
 
 export interface LineWrapperDivProps extends LineWrapperDefaultProps, DivProps {
-  component: "div"
+  component?: "div"
 }
 
 export interface LineWrapperButtonProps extends LineWrapperDefaultProps, ButtonProps {
-  component: "button"
+  component?: "button"
 }
 
 export interface LineWrapperLinkProps extends LineWrapperDefaultProps, AProps {
-  component: "a"
+  component?: "a"
 }
 
 export type LineWrapperProps = LineWrapperDivProps | LineWrapperButtonProps | LineWrapperLinkProps;
