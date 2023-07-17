@@ -1,12 +1,12 @@
 import React from "react";
 
-import { OnlineIndicator, OnlineIndicatorType } from "@/components/General/OnlineIndicator";
-import { Skin } from "@/components/General/Skin";
+import { OnlineIndicator, OnlineIndicatorType } from "src/components/General/OnlineIndicator";
+import { Skin } from "src/components/General/Skin";
 
-import classNames from "@/functions/classNames";
+import classNames from "src/functions/classNames";
 
-import RankIcon from "@/assets/icons/rank.png";
-import ActivityIcon from "@/assets/icons/activity.png";
+import RankIcon from "src/assets/icons/rank.png";
+import ActivityIcon from "src/assets/icons/activity.png";
 
 import { DivProps } from "react-html-props";
 

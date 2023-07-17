@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 
 import { Skin, SkinProps } from "./index";
 
-import SkinAsset from "@/assets/icons/skin.png";
+import SkinAsset from "src/assets/icons/skin.png";
 
 const meta: Meta = {
   title: "Pixefy UI/General/Skin",

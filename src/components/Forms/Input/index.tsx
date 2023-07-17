@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from "react";
 
-import classNames from "@/functions/classNames";
+import classNames from "src/functions/classNames";
 
 import { InputProps as DefaultInputProps } from "react-html-props";
 
-import "@/components/Forms/Input/index.scss";
+import "src/components/Forms/Input/index.scss";
 
 export interface InputProps extends DefaultInputProps {
   status?: "default" | "success" | "error",

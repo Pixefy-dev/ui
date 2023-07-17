@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Block } from "@/components/General/Block";
-import { LineWrapper } from "@/components/Blocks/LineWrapper";
+import { Block } from "src/components/General/Block";
+import { LineWrapper } from "src/components/Blocks/LineWrapper";
 
 import "./index.scss";
 

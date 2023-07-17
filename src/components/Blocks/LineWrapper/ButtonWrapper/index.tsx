@@ -1,12 +1,12 @@
 import React from "react";
 
-import classNames from "@/functions/classNames";
+import classNames from "src/functions/classNames";
 
 import {
   LineWrapper,
   LineWrapperButtonProps,
   LineWrapperLinkProps
-} from "@/components/Blocks/LineWrapper";
+} from "src/components/Blocks/LineWrapper";
 
 import "./index.scss";
 

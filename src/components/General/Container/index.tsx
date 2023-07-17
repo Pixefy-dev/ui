@@ -1,6 +1,6 @@
 import React from "react";
 
-import classNames from "@/functions/classNames";
+import classNames from "src/functions/classNames";
 
 import { DivProps } from "react-html-props";
 

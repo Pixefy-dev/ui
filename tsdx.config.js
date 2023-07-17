@@ -1,13 +1,33 @@
 const alias = require("@rollup/plugin-alias");
-
+const resolve = require("@rollup/plugin-node-resolve");
 const postcss = require("rollup-plugin-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const image = require("@rollup/plugin-image");
+const { join } = require("path");
+
+const customResolver = resolve({
+  extensions: [".ts", ".tsx", ".scss"]
+});
 
 module.exports = {
   rollup(config, options) {
-    config.plugins.push(image());
+    // config.plugins.push(image());
+    //
+    // config.plugins.push({
+    //   plugins: [
+    //     alias({
+    //       entries: [
+    //         {
+    //           find: "@",
+    //           replacement: "test"
+    //         }
+    //       ],
+    //       customResolver
+    //     }),
+    //     resolve()
+    //   ]
+    // });
 
     config.plugins.push(
       postcss({
@@ -22,16 +42,9 @@ module.exports = {
         extract: !!options.writeMeta,
       })
     );
-
-    config.plugins.push(
-      alias({
-        entries: [{ find: /@\//, replacement: /src\// }]
-      })
-    );
     //Do not treat absolute paths as external modules
     return {
-      ...config,
-      external: id => !id.startsWith("src/") && config.external(id)
+      ...config
     };
   },
 };

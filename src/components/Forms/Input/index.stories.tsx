@@ -3,8 +3,8 @@ import { Meta, Story } from "@storybook/react";
 
 import { Input, InputProps } from "./index";
 
-import SteveIcon from "@/assets/icons/steve.png";
-import PaperIcon from "@/assets/icons/paper.svg";
+import SteveIcon from "src/assets/icons/steve.png";
+import PaperIcon from "src/assets/icons/paper.svg";
 
 const meta: Meta = {
   title: "Pixefy UI/Forms/Input",

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import randomInteger from "@/functions/randomInteger";
-import classNames from "@/functions/classNames";
+import randomInteger from "src/functions/randomInteger";
+import classNames from "src/functions/classNames";
 
 import { DivProps } from "react-html-props";
 

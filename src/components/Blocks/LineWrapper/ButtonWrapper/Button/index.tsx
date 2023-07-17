@@ -2,7 +2,7 @@ import React from "react";
 import {
   ButtonWrapper,
   ButtonWrapperButtonProps
-} from "@/components/Blocks/LineWrapper/ButtonWrapper";
+} from "src/components/Blocks/LineWrapper/ButtonWrapper";
 
 export interface ButtonProps extends ButtonWrapperButtonProps {}
 

@@ -3,7 +3,7 @@ import { SkinViewer } from "skinview3d";
 
 import { CanvasProps, ImgProps } from "react-html-props";
 import { SkinViewerOptions } from "skinview3d/libs/viewer";
-import { useAsyncEffect } from "@/hooks/useAsyncEffect";
+import { useAsyncEffect } from "src/hooks/useAsyncEffect";
 
 interface SkinPropsDefault {
   type?: "image" | "canvas",

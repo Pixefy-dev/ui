@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container } from "@/components/General/Container";
+import { Container } from "src/components/General/Container";
 
 import "./index.scss";
 
