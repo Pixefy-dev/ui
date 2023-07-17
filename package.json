@@ -1,5 +1,5 @@
 {
-  "version": "1.1.9",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -32,7 +32,7 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "name": "@pixefy/ui",
+  "name": "pixefy-ui",
   "author": "SkyGopnik",
   "homepage": "https://github.com/Pixefy-dev/ui",
   "module": "dist/ui.esm.js",
