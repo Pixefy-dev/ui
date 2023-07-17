@@ -6,7 +6,7 @@ import { DivProps } from "react-html-props";
 
 import "./index.scss";
 
-interface ContainerProps extends DivProps {}
+export interface ContainerProps extends DivProps {}
 
 export function Container(props: ContainerProps) {
   return (

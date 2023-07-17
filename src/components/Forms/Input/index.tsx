@@ -1,123 +1,86 @@
-import React, { ReactElement } from "react";
-
-// import { Div } from "@/components/Blocks/LineWrapper/Div";
+import React, { useMemo, useState } from "react";
 
 import classNames from "@/functions/classNames";
 
-// import "./index.scss";
+import { InputProps as DefaultInputProps } from "react-html-props";
 
-export interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
+import "@/components/Forms/Input/index.scss";
+
+export interface InputProps extends DefaultInputProps {
   status?: "default" | "success" | "error",
-  align?: "left" | "center" | "right",
-  before?: ReactElement,
-  after?: ReactElement,
-  disabled?: boolean
+  beforeIcon?: string,
+  afterIcon?: string
 }
 
-interface IState {
-  isHover: boolean,
-  isFocus: boolean
-}
+export function Input(
+  {
+    status = "default",
+    beforeIcon,
+    afterIcon,
+    disabled,
+    ...props
+  }: InputProps
+) {
 
-export class Input extends React.Component<IProps, IState> {
+  const [focus, setFocus] = useState(false);
+  const [hover, setHover] = useState(false);
 
-  constructor(props: IProps) {
-    super(props);
+  const handleHover = () => setHover((value) => !value);
+  const handleFocus = () => setFocus((value) => !value);
 
-    this.state = {
-      isHover: false,
-      isFocus: false
-    };
-
-    this.handleHover = this.handleHover.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-  }
-
-  get color() {
-    const { status, disabled } = this.props;
-    const { isHover, isFocus } = this.state;
-
+  const color = useMemo(() => {
     if (!disabled) {
-      if (isHover && !isFocus) {
-        return "gray";
+      if (hover && !focus) {
+        return "hover";
       }
 
-      if (isFocus) {
-        return "blue";
+      if (focus) {
+        return "focus";
       }
     }
 
     if (status === "error") {
-      return "red";
+      return "error";
     }
 
     if (status === "success") {
-      return "green";
+      return "success";
     }
 
-    return "gray";
-  }
+    return "default";
+  }, [focus, hover, status, disabled]);
 
-  handleHover() {
-    this.setState((state) => ({
-      isHover: !state.isHover
-    }));
-  }
-
-  handleFocus() {
-    this.setState((state) => ({
-      isFocus: !state.isFocus
-    }));
-  }
-
-  render() {
-    const {
-      before,
-      after,
-      align = "left",
-      disabled = false,
-    } = this.props;
-
-    return (
-      <label
-        className="input"
-        onMouseEnter={this.handleHover}
-        onMouseLeave={this.handleHover}
-        onFocus={this.handleFocus}
-        onBlur={this.handleFocus}
-      >
-        <div
-          className={classNames(
-            `input--align-${align}`,
-            disabled && "input--disabled"
-          )}
-          // accentColor={this.color}
-          // disabled={disabled}
-        >
-          <div className="input__wrapper">
-            {before && (
-              <div className="input__before">
-                {before}
-              </div>
-            )}
-            <input
-              className={classNames(
-                "input__inner",
-                before && "input--hasBefore",
-                after && "input--hasAfter",
-              )}
-              type="text"
-              placeholder="Введите Email"
-              {...this.props}
-            />
-            {after && (
-              <div className="input__after">
-                {after}
-              </div>
-            )}
-          </div>
+  return (
+    <label
+      className={classNames(
+        "input",
+        `inputStyle_${color}`,
+        disabled && "inputDisabled",
+        beforeIcon && "inputPadding_before",
+        afterIcon && "inputPadding_after"
+      )}
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHover}
+      onFocus={handleFocus}
+      onBlur={handleFocus}
+    >
+      {beforeIcon && (
+        <div className="input__icon input__before">
+          <img src={beforeIcon} alt="input before icon" />
         </div>
-      </label>
-    );
-  }
+      )}
+
+      <input
+        className="input__field"
+        placeholder="Email или никнейм"
+        {...props}
+      />
+
+      {afterIcon && (
+        <div className="input__icon input__after">
+          <img src={afterIcon} alt="input before icon" />
+        </div>
+      )}
+    </label>
+  );
 }

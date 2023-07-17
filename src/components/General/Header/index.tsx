@@ -5,9 +5,6 @@ import { Container } from "@/components/General/Container";
 
 import classNames from "@/functions/classNames";
 
-import Logo from "@/assets/icons/logo.png";
-import News from "@/assets/icons/header/news.png";
-
 import "./index.scss";
 
 export interface HeaderProps {
@@ -33,7 +30,8 @@ export function Header(_: HeaderProps) {
       <div className="header__main">
         <Container className="header__container">
           <a className="header__logo" href="/">
-            <img src={Logo} alt="logo" />
+            logo
+            {/*<img src={Logo} alt="logo" />*/}
           </a>
           <Splash
             className="header__message"
@@ -43,21 +41,21 @@ export function Header(_: HeaderProps) {
           />
           <div className="header__menu header__menuCatalog">
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
           </div>
           <div className="header__menu header__menuActions">
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
           </div>
@@ -79,15 +77,15 @@ export function Header(_: HeaderProps) {
         <Container className="header__container">
           <div className="header__menu header__menuProfile">
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
           </div>
@@ -104,15 +102,15 @@ export function Header(_: HeaderProps) {
         <div className="header__mainMobile">
           <div className="header__menu header__menuCatalogMobile">
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
           </div>
@@ -120,15 +118,15 @@ export function Header(_: HeaderProps) {
         <div className="header__profileMobile">
           <div className="header__menu header__menuProfileMobile">
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
             <a className="header__menu__item" href="#">
-              <img className="menu__item__icon" src={News} alt="header icon" />
+              {/*<img className="menu__item__icon" src={News} alt="header icon" />*/}
               <span>Новости</span>
             </a>
           </div>

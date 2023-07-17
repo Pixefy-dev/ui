@@ -1,5 +1,5 @@
-import "@/style/reset.css";
-import "@/assets/fonts/minecraft/minecraftrus.css";
+import "src/style/reset.css";
+import "src/assets/fonts/minecraft/minecraftrus.css";
 
 const customViewports = {
   desktop: {

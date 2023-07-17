@@ -3,8 +3,6 @@ import React from "react";
 import { Block } from "@/components/General/Block";
 import { LineWrapper } from "@/components/Blocks/LineWrapper";
 
-import ExclamationIcon from "./img/exclamation.svg";
-
 import "./index.scss";
 
 export function Notification() {
@@ -12,7 +10,7 @@ export function Notification() {
     <Block className="notification" type="light">
       <LineWrapper component="div" accentColor="green">
         <div className="notification__icon">
-          <img src={ExclamationIcon} alt="" />
+          {/*<img src={ExclamationIcon} alt="" />*/}
         </div>
       </LineWrapper>
       <p className="notification__text">
