@@ -8,19 +8,16 @@ const meta: Meta = {
   component: Button,
   argTypes: {
     align: {
-      defaultValue: "center",
       table: {
         defaultValue: { summary: "center" }
       }
     },
     accentColor: {
-      defaultValue: "gray",
       table: {
         defaultValue: { summary: "gray" }
       }
     },
     children: {
-      defaultValue: "Default",
       control: {
         type: "text"
       }
@@ -40,6 +37,8 @@ const Template: StoryFn<ButtonProps> = args => <Button {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
+  align: "center",
+  accentColor: "gray",
   children: "Default"
 };
 
