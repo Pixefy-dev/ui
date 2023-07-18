@@ -1,5 +1,6 @@
 export * from "./components/Blocks/LineWrapper/ButtonWrapper/Button";
 export * from "./components/Blocks/LineWrapper/ButtonWrapper/Link";
+export * from "./components/Blocks/LineWrapper/NumberCell";
 export * from "./components/Blocks/LineWrapper";
 export * from "./components/General/Block";
 export * from "./components/General/Container";
