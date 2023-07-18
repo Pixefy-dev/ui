@@ -1,0 +1,28 @@
+name: Storybook
+on:
+  push:
+    branches:
+      - main # if any push happens on branch `main`, run this workflow. You could also add `paths` to detect changes in specific folder
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+
+      - name: Install deps and build (with cache)
+        run: yarn install --ignore-engines
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Build StoryBook
+        run: yarn build
+
+      - name: Deploy storybook to GitHub Pages
+        run: npm run deploy-storybook -- --ci
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
