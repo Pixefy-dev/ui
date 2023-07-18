@@ -1,25 +1,29 @@
-name: Deploy to GitHub Pages
-
+name: Storybook
 on:
   push:
     branches:
-      - main
+      - main # if any push happens on branch `main`, run this workflow. You could also add `paths` to detect changes in specific folder
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2.3.1
-
-      - name: Install deps and build (with cache)
-        run: yarn install --ignore-engines
-
-      - name: Build StoryBook
-        run: yarn build
-
-      - name: Build and deploy Storybook
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Pull, build & restart
+        uses: appleboy/ssh-action@master
         with:
-          publish_dir: ./storybook-static
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd ~/pixefy/ui
+            git pull origin ${{ steps.extract_branch.outputs.branch }}
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            nvm use 16.17.0
+            npm i
+            rm -rf storybook-static
+            npm run build
+            cd ~/web/storybook.pixefy.net
+            rm -rf public_html
+            mkdir public_html
+            cp -a ~/pixefy/ui/storybook-static. ~/web/storybook.pixefy.net/public_html

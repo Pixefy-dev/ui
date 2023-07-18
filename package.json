@@ -1,6 +1,8 @@
 {
   "name": "@pixefy/ui",
-  "author": "skygopnik",
+  "author": {
+    "name": "skygopnik"
+  },
   "private": false,
   "version": "1.3.11",
   "packageManager": "pnpm@8.4.0",
@@ -23,7 +25,8 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix",
     "prettier": "prettier --write \"src/**/*.{ts,tsx,js,mdx}\"",
     "test:cov": "vitest run --coverage",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_fd195392b1ef223"
   },
   "peerDependencies": {
     "react": "18.2.0",
@@ -55,6 +58,7 @@
     "@vitest/coverage-c8": "0.32.2",
     "autoprefixer": "10.4.14",
     "babel-loader": "9.1.2",
+    "chromatic": "^6.19.9",
     "eslint": "8.43.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-config-standard-with-typescript": "35.0.0",
@@ -85,5 +89,7 @@
     "*.{ts,tsx,js,jsx,json,css,md}": [
       "prettier -w"
     ]
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@pixefy/ui@1.3.11"
 }
