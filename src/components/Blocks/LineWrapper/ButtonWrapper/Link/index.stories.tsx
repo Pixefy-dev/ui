@@ -7,14 +7,7 @@ const meta: Meta = {
   title: "Pixefy UI/Blocks/LineWrapper/Link",
   component: Link,
   argTypes: {
-    href: {
-      defaultValue: "#",
-      table: {
-        defaultValue: { summary: "#" }
-      }
-    },
     align: {
-      defaultValue: "center",
       table: {
         defaultValue: { summary: "center" }
       }
@@ -26,7 +19,6 @@ const meta: Meta = {
       }
     },
     children: {
-      defaultValue: "Default",
       control: {
         type: "text"
       }
@@ -45,7 +37,12 @@ const Template: StoryFn<LinkProps> = args => <Link {...args} />;
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  href: "#",
+  align: "center",
+  accentColor: "gray",
+  children: "Default"
+};
 Default.parameters = {
   controls: {
     exclude: ["component"]
