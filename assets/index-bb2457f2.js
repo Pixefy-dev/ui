@@ -1,0 +1,2 @@
+import{j as t}from"./jsx-runtime-94f6e698.js";import{c as l}from"./classNames-8f09ac49.js";function r({type:e="dark",...a}){return t.jsx("div",{...a,className:l("block",`blockStyle_${e}`,a.className)})}try{r.displayName="Block",r.__docgenInfo={description:"",displayName:"Block",props:{type:{defaultValue:{value:"dark"},description:"",name:"type",required:!1,type:{name:"enum",value:[{value:'"light"'},{value:'"dark"'}]}}}}}catch{}export{r as B};
+//# sourceMappingURL=index-bb2457f2.js.map
