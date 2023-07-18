@@ -1,0 +1,19 @@
+@import "src/style/adaptive";
+
+.cellNumber {
+  &__inner {
+    @include adapt("width", 55px, 50px, 40px, 32px);
+    @include adapt("height", 55px, 50px, 40px, 32px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Minecraft Rus", sans-serif;
+    @include adapt("font-size", 32px, 24px, 20px, 16px);
+    font-weight: 400;
+    line-height: 120%;
+
+    color: var(--color-white-100, #FFF);
+  }
+}
