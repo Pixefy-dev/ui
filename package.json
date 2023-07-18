@@ -16,6 +16,9 @@
     },
     "./dist/style.css": "./dist/style.css"
   },
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
     "deploy": "npm run build:lib && np",
     "deploy-storybook": "storybook-to-ghpages",
