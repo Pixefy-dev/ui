@@ -4,6 +4,7 @@ import { defineConfig } from 'vitest/config'
 import dts from 'vite-plugin-dts'
 import { UserConfigExport } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
+import { viteStaticCopy } from "vite-plugin-static-copy";
 import { name } from "./package.json";
 
 const app = async (): Promise<UserConfigExport> => {
@@ -19,6 +20,14 @@ const app = async (): Promise<UserConfigExport> => {
       dts({
         insertTypesEntry: true,
       }),
+      viteStaticCopy({
+        targets: [
+          {
+            src: './src/style/[!.]*',
+            dest: './style', // 2️⃣
+          },
+        ],
+      })
     ],
     build: {
       lib: {
@@ -28,7 +37,7 @@ const app = async (): Promise<UserConfigExport> => {
         fileName: (format) => `${name}.${format}.js`,
       },
       rollupOptions: {
-        external: ['react', 'react-dom', 'tailwindcss'],
+        external: ['react', 'react-dom'],
         output: {
           globals: {
             react: 'React',
