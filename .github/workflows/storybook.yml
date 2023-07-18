@@ -26,4 +26,4 @@ jobs:
             cd ~/web/storybook.pixefy.net
             rm -rf public_html
             mkdir public_html
-            cp -a ~/pixefy/ui/storybook-static. ~/web/storybook.pixefy.net/public_html
+            cp -a ~/pixefy/ui/storybook-static ~/web/storybook.pixefy.net/public_html
