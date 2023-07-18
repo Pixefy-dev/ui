@@ -14,9 +14,6 @@
     },
     "./dist/style.css": "./dist/style.css"
   },
-  "engines": {
-    "node": "16"
-  },
   "scripts": {
     "deploy": "npm run build:lib && np",
     "deploy-storybook": "storybook-to-ghpages",
@@ -48,7 +45,6 @@
     "@storybook/blocks": "7.0.23",
     "@storybook/react": "7.0.23",
     "@storybook/react-vite": "7.0.23",
-    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/testing-library": "0.2.0",
     "@testing-library/react": "14.0.0",
     "@types/node": "20.3.1",
