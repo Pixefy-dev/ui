@@ -25,5 +25,4 @@ jobs:
             npm run build
             cd ~/web/storybook.pixefy.net
             rm -rf public_html
-            mkdir public_html
             cp -r ~/pixefy/ui/storybook-static ~/web/storybook.pixefy.net/public_html
