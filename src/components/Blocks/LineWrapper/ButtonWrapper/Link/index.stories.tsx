@@ -43,6 +43,7 @@ Default.args = {
   accentColor: "gray",
   children: "Default"
 };
+
 Default.parameters = {
   controls: {
     exclude: ["component"]
