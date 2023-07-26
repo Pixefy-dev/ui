@@ -30,19 +30,17 @@
 
   &Size {
     &_small {
-      min-width: 250px;
-
       @include adapt("font-size", 16px, 14px, 12px, 12px);
 
       .button__inner {
-        padding: 12px 90px;
+        padding: 12px 30px;
 
         @include adaptive-sm {
-          padding: 11px 98px;
+          padding: 11px 30px;
         }
 
         @include adaptive-xs {
-          padding: 10px 99px;
+          padding: 10px 30px;
         }
       }
     }
