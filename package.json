@@ -4,7 +4,7 @@
     "name": "skygopnik"
   },
   "private": false,
-  "version": "1.3.19",
+  "version": "1.3.20",
   "packageManager": "pnpm@8.4.0",
   "main": "./dist/@pixefy/ui.umd.js",
   "module": "./dist/@pixefy/ui.es.js",
