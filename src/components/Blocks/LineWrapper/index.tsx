@@ -67,6 +67,7 @@ export function LineWrapper(props: LineWrapperProps) {
             {children}
           </span>
         )}
+
         <span className="lineWrapper__lineSide" />
       </span>
       <span className="lineWrapper__lineBottom" />

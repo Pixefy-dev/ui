@@ -35,9 +35,19 @@ export function ButtonWrapper(props: ButtonWrapperButtonProps | ButtonWrapperLin
         `buttonSize_${size}`
       )}
     >
-      <span className="button__inner">
-        {children}
-      </span>
+      {React.isValidElement(children) ? (
+        React.cloneElement(children, {
+          ...children.props,
+          className: classNames(
+            "button__inner",
+            children.props.className
+          )
+        })
+      ) : (
+        <span className="button__inner">
+          {children}
+        </span>
+      )}
     </LineWrapper>
   );
 }
