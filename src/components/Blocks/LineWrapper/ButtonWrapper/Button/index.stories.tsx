@@ -7,6 +7,13 @@ const meta: Meta = {
   title: "Pixefy UI/Blocks/LineWrapper/Button",
   component: Button,
   argTypes: {
+    size: {
+      options: ["small", "big"],
+      control: { type: "radio" },
+      table: {
+        defaultValue: { summary: "small" }
+      }
+    },
     align: {
       table: {
         defaultValue: { summary: "center" }
@@ -37,6 +44,7 @@ const Template: StoryFn<ButtonProps> = args => <Button {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
+  size: "small",
   align: "center",
   accentColor: "gray",
   children: "Default"

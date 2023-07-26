@@ -1,49 +1,72 @@
 @import "src/style/adaptive";
 
 .button {
-  @include adapt("min-width", 175px, 159px, 140px, 120px);
+  font-family: "Minecraft Rus", sans-serif;
+  font-weight: 400;
+  line-height: 120%;
 
   cursor: pointer;
-
-  font-family: "Minecraft Rus", sans-serif;
-
-  @include adapt("font-size", 20px, 18px, 16px, 14px);
-
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
+  user-select: none;
 
   color: #ffffff;
 
   &__inner {
-    padding: 20px 30px;
-
-    color: #fff;
-
-    @include adaptive-md {
-      padding: 15px 28px;
-    }
-
-    @include adaptive-sm {
-      padding: 9px 24px;
-    }
-
-    @include adaptive-xs {
-      padding: 6px 20px;
-    }
+    color: #FFFFFF;
   }
 
-  &--align {
-    &-left .button__inner {
+  &Align {
+    &_left .button__inner {
       text-align: left;
     }
 
-    &-center .button__inner {
+    &_center .button__inner {
       text-align: center;
     }
 
-    &-right .button__inner {
+    &_right .button__inner {
       text-align: right;
+    }
+  }
+
+  &Size {
+    &_small {
+      min-width: 250px;
+
+      @include adapt("font-size", 16px, 14px, 12px, 12px);
+
+      .button__inner {
+        padding: 12px 90px;
+
+        @include adaptive-sm {
+          padding: 11px 98px;
+        }
+
+        @include adaptive-xs {
+          padding: 10px 99px;
+        }
+      }
+    }
+
+    &_big {
+      @include adapt("min-width", 175px, 159px, 140px, 120px);
+
+      @include adapt("font-size", 20px, 18px, 16px, 14px);
+
+      .button__inner {
+        padding: 20px 30px;
+
+        @include adaptive-md {
+          padding: 15px 28px;
+        }
+
+        @include adaptive-sm {
+          padding: 9px 24px;
+        }
+
+        @include adaptive-xs {
+          padding: 6px 20px;
+        }
+      }
     }
   }
 }

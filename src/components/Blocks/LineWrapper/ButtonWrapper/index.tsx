@@ -11,6 +11,7 @@ import {
 import "./index.scss";
 
 interface DefaultButtonWrapperProps {
+  size?: "big" | "small",
   align?: "left" | "center" | "right"
 }
 
@@ -20,6 +21,7 @@ export interface ButtonWrapperLinkProps extends DefaultButtonWrapperProps, LineW
 
 export function ButtonWrapper(props: ButtonWrapperButtonProps | ButtonWrapperLinkProps) {
   const {
+    size = "small",
     align = "center",
     children
   } = props;
@@ -29,7 +31,8 @@ export function ButtonWrapper(props: ButtonWrapperButtonProps | ButtonWrapperLin
       {...props}
       className={classNames(
         "button",
-        `button--align-${align}`
+        `buttonAlign_${align}`,
+        `buttonSize_${size}`
       )}
     >
       <span className="button__inner">

@@ -7,6 +7,13 @@ const meta: Meta = {
   title: "Pixefy UI/Blocks/LineWrapper/Link",
   component: Link,
   argTypes: {
+    size: {
+      options: ["small", "big"],
+      control: { type: "radio" },
+      table: {
+        defaultValue: { summary: "small" }
+      }
+    },
     align: {
       table: {
         defaultValue: { summary: "center" }
@@ -39,6 +46,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   href: "#",
+  size: "small",
   align: "center",
   accentColor: "gray",
   children: "Default"
