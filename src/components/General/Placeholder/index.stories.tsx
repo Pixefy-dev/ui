@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 
-import Placeholder , { PlaceholderProps } from "./index";
+import Placeholder, { PlaceholderProps } from "./index";
 
 const meta: Meta = {
   title: "Pixefy UI/General/Placeholder",
